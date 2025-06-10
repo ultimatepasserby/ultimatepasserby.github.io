@@ -1,0 +1,3 @@
+- [首页](/)
+- [Python笔记](/docs/python)
+- [查看我的简历](/resume)
