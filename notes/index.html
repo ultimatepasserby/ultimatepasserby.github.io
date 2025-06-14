@@ -16,14 +16,12 @@
             loadSidebar: true,
             subMaxLevel: 3,
             alias: {
-                // 修正路径匹配规则
-                '/notes/_sidebar.md': '/notes/_sidebar.md',
-                // 改进Markdown文件解析路径
-                '/notes/(.*).md': '/notes/docs/$1.md'
+                // 更通用的路径匹配规则
+                '/notes/(.*)': '/notes/docs/$1.md'
             },
             routes: {
-                // 确保基础路由正确指向侧边栏
-                '/notes/': '/notes/_sidebar.md',
+                // 默认加载一个具体的文档而不是侧边栏文件
+                '/notes/': '/notes/docs/Cpp学习笔记.md',
                 '/resume': '../resume/index.html'
             }
         }
