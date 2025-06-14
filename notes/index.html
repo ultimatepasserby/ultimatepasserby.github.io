@@ -16,14 +16,14 @@
             loadSidebar: true,
             subMaxLevel: 3,
             alias: {
-                // 修正侧边栏路径匹配规则
-                '/notes/_sidebar.md': '/_sidebar.md',
-                // 添加Markdown文件自动解析规则
-                '/notes/(.*).md': '/docs/$1.md'
+                // 修正路径匹配规则
+                '/notes/_sidebar.md': '/notes/_sidebar.md',
+                // 改进Markdown文件解析路径
+                '/notes/(.*).md': '/notes/docs/$1.md'
             },
             routes: {
-                // 添加基础路由确保首页正确加载
-                '/notes/': '/_sidebar.md',
+                // 确保基础路由正确指向侧边栏
+                '/notes/': '/notes/_sidebar.md',
                 '/resume': '../resume/index.html'
             }
         }
