@@ -15,9 +15,3 @@
 - [SAP笔记](/notes/docs/SAP学习笔记.md)
 - [查看我的简历](/resume)
 
-### 学习笔记导航
-- [C++](/notes/Cpp学习笔记.md)
-- [Go语言](/notes/Golang学习笔记.md)
-- [JavaScript](/notes/Javascript学习笔记.md)
-- [Java](/notes/Java学习笔记.md)
-- [Linux](/notes/Linux学习笔记.md)
