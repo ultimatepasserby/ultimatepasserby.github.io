@@ -1,3 +1,9 @@
+---
+title: "Python网络爬虫学习笔记"
+date: 2025-06-15  # 可选，手动指定日期
+layout: default      # 可选，指定布局（如 `post` 或 `default`）
+categories: [Spider, Python]  # 可选，添加分类
+---
 # Python网络爬虫学习笔记
 
 ## 一、网络数据采集概述

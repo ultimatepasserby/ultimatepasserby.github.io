@@ -1,5 +1,9 @@
-这份笔记涵盖了Python从基础概念到面向对象编程的核心内容，我将其系统整理为简洁易懂的版本，方便你学习回顾。
-
+---
+title: "Python学习笔记"
+date: 2025-06-15  # 可选，手动指定日期
+layout: default      # 可选，指定布局（如 `post` 或 `default`）
+categories: [Python]  # 可选，添加分类
+---
 # Python 学习笔记
 
 ## 一、Python 基础入门

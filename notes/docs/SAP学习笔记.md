@@ -1,3 +1,9 @@
+---
+title: "SAP学习笔记"
+date: 2025-06-15  # 可选，手动指定日期
+layout: default      # 可选，指定布局（如 `post` 或 `default`）
+categories: [SAP]  # 可选，添加分类
+---
 # SAP学习笔记
 
 ## 一、财务会计（FI）模块

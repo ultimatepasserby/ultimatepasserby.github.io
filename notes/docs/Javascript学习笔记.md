@@ -1,5 +1,9 @@
-以下是对 JavaScript 各知识点的详细阐述及代码示例：
-
+---
+title: "Javascript学习笔记"
+date: 2025-06-15  # 可选，手动指定日期
+layout: default      # 可选，指定布局（如 `post` 或 `default`）
+categories: [javascript]  # 可选，添加分类
+---
 ### 一、基础语法与核心概念
 
 #### 1. 变量与作用域
