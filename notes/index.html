@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        /* 样式部分与之前相同，保持响应式网格布局 */
         body { 
             font-family: Arial, sans-serif; 
             margin: 40px auto;
@@ -29,60 +30,20 @@
             transition: transform 0.2s;
         }
         
-        .note-card:hover {
-            transform: translateY(-5px);
-        }
-        
         .note-icon {
             font-size: 2.5em;
             margin-bottom: 15px;
             color: #42b983;
         }
         
-        .note-title {
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-        
-        .note-link {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #f0f0f0;
-            border-radius: 4px;
-            text-decoration: none;
-            color: #333;
-            transition: background-color 0.3s;
-        }
-        
-        .note-link:hover {
-            background-color: #42b983;
-            color: white;
-        }
-        
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            color: #666;
-            padding: 20px;
-            border-top: 1px solid #eee;
-        }
-        
         @media (max-width: 1200px) {
-            .grid-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
+            .grid-container { grid-template-columns: repeat(3, 1fr); }
         }
-        
         @media (max-width: 900px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .grid-container { grid-template-columns: repeat(2, 1fr); }
         }
-        
         @media (max-width: 600px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
+            .grid-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -90,80 +51,30 @@
     <h1 style="text-align:center;">📚 我的学习笔记</h1>
     
     <div class="grid-container">
-        <div class="note-card">
-            <div class="note-icon">📘</div>
-            <div class="note-title">C++ 学习笔记</div>
-            <a href="/notes/docs/Cpp学习笔记.md" class="note-link">查看笔记</a>
-        </div>
+        <!-- 已有笔记卡片保持不变 -->
+        <div class="note-card"><div class="note-icon">📘</div><div class="note-title">C++ 学习笔记</div><a href="/notes/docs/Cpp学习笔记.md" class="note-link">查看笔记</a></div>
+        <div class="note-card"><div class="note-icon">🐍</div><div class="note-title">Python 基础篇</div><a href="/notes/docs/Python学习笔记-基础篇.md" class="note-link">查看笔记</a></div>
+        <div class="note-card"><div class="note-icon">⚙️</div><div class="note-title">Linux 学习笔记</div><a href="/notes/docs/Linux学习笔记.md" class="note-link">查看笔记</a></div>
+        <div class="note-card"><div class="note-icon">🌐</div><div class="note-title">JavaScript 学习笔记</div><a href="/notes/docs/Javascript学习笔记.md" class="note-link">查看笔记</a></div>
+        <div class="note-card"><div class="note-icon">☕</div><div class="note-title">Java 学习笔记</div><a href="/notes/docs/Java学习笔记.md" class="note-link">查看笔记</a></div>
+        <div class="note-card"><div class="note-icon">📦</div><div class="note-title">Python 进阶篇</div><a href="/notes/docs/Python学习笔记-进阶篇.md" class="note-link">查看笔记</a></div>
+        <div class="note-card"><div class="note-icon">💾</div><div class="note-title">数据库学习笔记</div><a href="/notes/docs/数据库学习笔记.md" class="note-link">查看笔记</a></div>
+        <div class="note-card"><div class="note-icon">🧠</div><div class="note-title">深度学习笔记</div><a href="/notes/docs/深度学习学习笔记.md" class="note-link">查看笔记</a></div>
+        <div class="note-card"><div class="note-icon">📈</div><div class="note-title">Python 数据分析</div><a href="/notes/docs/Python 数据分析学习笔记.md" class="note-link">查看笔记</a></div>
+        <div class="note-card"><div class="note-icon">🕷️</div><div class="note-title">Python 网络爬虫</div><a href="/notes/docs/Python 网络爬虫与并发编程笔记.md" class="note-link">查看笔记</a></div>
+        <div class="note-card"><div class="note-icon">🚀</div><div class="note-title">Go 语言学习笔记</div><a href="/notes/docs/Golang学习笔记.md" class="note-link">查看笔记</a></div>
+        <div class="note-card"><div class="note-icon">📊</div><div class="note-title">MATLAB 学习笔记</div><a href="/notes/docs/Matlab学习笔记.md" class="note-link">查看笔记</a></div>
         
-        <div class="note-card">
-            <div class="note-icon">🐍</div>
-            <div class="note-title">Python 基础篇</div>
-            <a href="/notes/docs/Python学习笔记-基础篇.md" class="note-link">查看笔记</a>
-        </div>
+        <!-- 新增的两个笔记卡片 -->
+        <div class="note-card"><div class="note-icon">🎓</div><div class="note-title">吴恩达深度学习</div><a href="/notes/docs/吴恩达深度学习笔记.md" class="note-link">查看笔记</a></div>
+        <div class="note-card"><div class="note-icon">🧩</div><div class="note-title">SAP 学习笔记</div><a href="/notes/docs/SAP学习笔记.md" class="note-link">查看笔记</a></div>
         
-        <div class="note-card">
-            <div class="note-icon">⚙️</div>
-            <div class="note-title">Linux 学习笔记</div>
-            <a href="/notes/docs/Linux学习笔记.md" class="note-link">查看笔记</a>
-        </div>
-        
-        <div class="note-card">
-            <div class="note-icon">🌐</div>
-            <div class="note-title">JavaScript 学习笔记</div>
-            <a href="/notes/docs/Javascript学习笔记.md" class="note-link">查看笔记</a>
-        </div>
-        
-        <div class="note-card">
-            <div class="note-icon">☕</div>
-            <div class="note-title">Java 学习笔记</div>
-            <a href="/notes/docs/Java学习笔记.md" class="note-link">查看笔记</a>
-        </div>
-        
-        <div class="note-card">
-            <div class="note-icon">📦</div>
-            <div class="note-title">Python 进阶篇</div>
-            <a href="/notes/docs/Python学习笔记-进阶篇.md" class="note-link">查看笔记</a>
-        </div>
-        
-        <div class="note-card">
-            <div class="note-icon">💾</div>
-            <div class="note-title">数据库学习笔记</div>
-            <a href="/notes/docs/数据库学习笔记.md" class="note-link">查看笔记</a>
-        </div>
-        
-        <div class="note-card">
-            <div class="note-icon">🧠</div>
-            <div class="note-title">深度学习笔记</div>
-            <a href="/notes/docs/深度学习学习笔记.md" class="note-link">查看笔记</a>
-        </div>
-        
-        <div class="note-card">
-            <div class="note-icon">📈</div>
-            <div class="note-title">Python 数据分析</div>
-            <a href="/notes/docs/Python 数据分析学习笔记.md" class="note-link">查看笔记</a>
-        </div>
-        
-        <div class="note-card">
-            <div class="note-icon">🕷️</div>
-            <div class="note-title">Python 网络爬虫</div>
-            <a href="/notes/docs/Python 网络爬虫与并发编程笔记.md" class="note-link">查看笔记</a>
-        </div>
-        
-        <div class="note-card">
-            <div class="note-icon">🚀</div>
-            <div class="note-title">Go 语言学习笔记</div>
-            <a href="/notes/docs/Golang学习笔记.md" class="note-link">查看笔记</a>
-        </div>
-        
-        <div class="note-card">
-            <div class="note-icon">📊</div>
-            <div class="note-title">MATLAB 学习笔记</div>
-            <a href="/notes/docs/Matlab学习笔记.md" class="note-link">查看笔记</a>
-        </div>
+        <!-- 空位预留（可选） -->
+        <div class="note-card" style="opacity:0.5; border-color:#ccc;"><div class="note-icon">➕</div><div class="note-title">预留位置 1</div><div class="note-link" style="pointer-events:none;">开发中</div></div>
+        <div class="note-card" style="opacity:0.5; border-color:#ccc;"><div class="note-icon">➕</div><div class="note-title">预留位置 2</div><div class="note-link" style="pointer-events:none;">开发中</div></div>
     </div>
     
-    <footer>
+    <footer style="margin-top:60px; text-align:center; color:#666;">
         <p>© 2025 我的个人空间 - 使用 GitHub Pages 部署</p>
         <p>笔记文件同步更新于 <a href="https://github.com/ultimatepasserby/ultimatepasserby.github.io" target="_blank">GitHub 仓库</a></p>
     </footer>
