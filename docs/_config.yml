@@ -1,7 +1,7 @@
 # 基本设置
 title: "我的学习笔记"  # 显示在浏览器标签和页眉
 description: "我的学习笔记"  # 网站描述
-baseurl: "/notes"  # 如果站点在子路径（如 `/repo`）则填写 "/repo"
+baseurl: "/docs"  # 如果站点在子路径（如 `/repo`）则填写 "/repo"
 url: "https://ultimatepasserby.github.io"  # 你的 GitHub Pages 地址
 
 # Jekyll 配置
