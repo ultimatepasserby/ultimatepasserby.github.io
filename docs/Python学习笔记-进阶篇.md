@@ -1,9 +1,3 @@
----
-title: "Python学习笔记2"
-date: 2025-06-15  # 可选，手动指定日期
-layout: default      # 可选，指定布局（如 `post` 或 `default`）
-categories: [Python]  # 可选，添加分类
----
 # Python 进阶应用笔记
 
 ## 一、文件操作与异常处理

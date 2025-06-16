@@ -1,9 +1,3 @@
----
-title: "Golang学习笔记"
-date: 2025-06-15  # 可选，手动指定日期
-layout: default      # 可选，指定布局（如 `post` 或 `default`）
-categories: [Golang]  # 可选，添加分类
----
 ### 一、基础语法
 #### 1. 变量与常量
 - **变量声明**：

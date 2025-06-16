@@ -1,9 +1,3 @@
----
-title: "Linux学习笔记"
-date: 2025-06-15  # 可选，手动指定日期
-layout: default      # 可选，指定布局（如 `post` 或 `default`）
-categories: [Linux, Shell]  # 可选，添加分类
----
 # Linux 学习笔记
 
 ## 一、Linux 基础概念
