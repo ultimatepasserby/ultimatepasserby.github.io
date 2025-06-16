@@ -25,6 +25,7 @@
   <script>
     window.$docsify = {
       el: '#app',
+      name: '学习笔记',
       repo: 'https://github.com/ultimatepasserby/ultimatepasserby.github.io',
       loadSidebar: true, // 自动读取 _sidebar.md
       markdown: {
@@ -32,7 +33,10 @@
         xhtmlOut: true,
         linkify: true
       },
-      subMaxLevel: 2,
+      subMaxLevel: 3,
+      alias:{
+        '/notes/(.*)\\.md': '/docs/$1.md'
+      },
       auto2top: true
     };
   </script>
