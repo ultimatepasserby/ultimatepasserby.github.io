@@ -2,4 +2,5 @@
 
 > 整理了多个技术方向的系统化学习笔记，涵盖 Python、Java、前端、数据库、Linux 等方向。
 
-📌 点击左侧菜单开始阅读。
+点击开始阅读。
+https://github.com/ultimatepasserby/ultimatepasserby.github.io/blob/main/docs/_sidebar.md
