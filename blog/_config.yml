@@ -18,3 +18,6 @@ navigation:
 # 在 _config.yml 中添加
 sass:
   sass_dir: assets/css
+
+paginate: 15  # 每页15个笔记
+paginate_path: "/page:num/"
