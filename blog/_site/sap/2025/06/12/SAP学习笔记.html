@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SAP学习笔记</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="SAP学习笔记" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="SAP学习笔记" />
+<meta property="og:description" content="SAP学习笔记" />
+<link rel="canonical" href="http://localhost:4000/blog/sap/2025/06/12/SAP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" />
+<meta property="og:url" content="http://localhost:4000/blog/sap/2025/06/12/SAP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-06-12T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SAP学习笔记" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-12T00:00:00+08:00","datePublished":"2025-06-12T00:00:00+08:00","description":"SAP学习笔记","headline":"SAP学习笔记","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/sap/2025/06/12/SAP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"},"url":"http://localhost:4000/blog/sap/2025/06/12/SAP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" /></head>
+<body><a href="/" class="home-link">返回简历主页</a>
+<!-- 确保自定义样式被加载 -->
+<link rel="stylesheet" href="/blog/assets/css/main.scss"><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">SAP学习笔记</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-06-12T00:00:00+08:00" itemprop="datePublished">Jun 12, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="sap学习笔记">SAP学习笔记</h1>
+
+<h2 id="一财务会计fi模块">一、财务会计（FI）模块</h2>
+
+<h3 id="11-总分类账general-ledger">1.1 总分类账（General Ledger）</h3>
+
+<h4 id="知识点">知识点</h4>
+<ul>
+  <li><strong>科目表</strong>：企业财务科目的清单。</li>
+  <li><strong>会计凭证</strong>：记录每笔财务交易的凭证。</li>
+  <li><strong>过账</strong>：更新总分类账和相关明细账的过程。</li>
+</ul>
+
+<h4 id="操作步骤">操作步骤</h4>
+<ol>
+  <li>创建会计凭证：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">F-02</code>，输入凭证日期、记账日期、凭证类型等信息。</li>
+      <li>输入记账码、科目编码、金额及文本说明。</li>
+    </ul>
+  </li>
+  <li>检查与保存凭证：
+    <ul>
+      <li>核对信息，使用快捷键 <code class="language-plaintext highlighter-rouge">Ctrl + F3</code> 进行检查。</li>
+      <li>确认无误后点击保存或按 <code class="language-plaintext highlighter-rouge">F11</code> 键。</li>
+    </ul>
+  </li>
+  <li>过账操作：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">FB00</code>，输入凭证编号执行过账操作。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例">案例</h4>
+<p>某企业购买办公用品花费 1000 元，以银行存款支付：</p>
+<ul>
+  <li>记账码 50（贷方）表示银行存款减少。</li>
+  <li>记账码 40（借方）表示办公用品费用增加。</li>
+  <li>过账后，总分类账中银行存款科目减少 1000 元，办公用品费用科目增加 1000 元。</li>
+</ul>
+
+<hr />
+
+<h3 id="12-应收账款accounts-receivable">1.2 应收账款（Accounts Receivable）</h3>
+
+<h4 id="知识点-1">知识点</h4>
+<ul>
+  <li><strong>客户主数据</strong>：包含客户的基本信息、财务信息、销售信息等。</li>
+  <li><strong>发票处理</strong>：创建销售发票后，系统自动生成应收账款分录。</li>
+  <li><strong>收款处理</strong>：收到客户款项时，核销相应的应收账款。</li>
+  <li><strong>账龄分析</strong>：对应收账款按账龄进行分类分析。</li>
+</ul>
+
+<h4 id="操作步骤-1">操作步骤</h4>
+<ol>
+  <li>维护客户主数据：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">XD02</code>，设置付款条件、信用额度等。</li>
+    </ul>
+  </li>
+  <li>创建销售发票：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">VF01</code>，输入销售订单号生成发票。</li>
+    </ul>
+  </li>
+  <li>收款处理：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">F-28</code>，选择客户编号并核销发票。</li>
+    </ul>
+  </li>
+  <li>账龄分析：
+    <ul>
+      <li>执行事务代码 <code class="language-plaintext highlighter-rouge">F.05</code>，运行报表分析应收账款分布。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-1">案例</h4>
+<p>企业向客户 A 销售产品，金额为 5000 元：</p>
+<ul>
+  <li>开具销售发票，系统生成会计凭证，借记应收账款 - 客户 A 5000 元，贷记销售收入 5000 元。</li>
+  <li>收到客户 A 的付款 5000 元，系统核销该笔应收账款，同时生成会计凭证，借记银行存款 5000 元，贷记应收账款 - 客户 A 5000 元。</li>
+</ul>
+
+<hr />
+
+<h3 id="13-应付账款accounts-payable">1.3 应付账款（Accounts Payable）</h3>
+
+<h4 id="知识点-2">知识点</h4>
+<ul>
+  <li><strong>供应商主数据</strong>：包含供应商的基本信息、财务信息、采购信息等。</li>
+  <li><strong>发票校验</strong>：匹配发票信息与采购订单、收货信息。</li>
+  <li><strong>付款处理</strong>：根据付款条件和方式生成付款建议。</li>
+  <li><strong>争议处理</strong>：解决发票与采购订单或收货信息存在的差异。</li>
+</ul>
+
+<h4 id="操作步骤-2">操作步骤</h4>
+<ol>
+  <li>维护供应商主数据：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">XK02</code>，设置付款条件、付款方式等。</li>
+    </ul>
+  </li>
+  <li>发票校验：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">MIRO</code>，输入供应商编号、发票信息等。</li>
+    </ul>
+  </li>
+  <li>付款处理：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">F110</code>，设置付款参数并运行付款建议。</li>
+    </ul>
+  </li>
+  <li>争议处理：
+    <ul>
+      <li>若发现差异，通过事务代码 <code class="language-plaintext highlighter-rouge">MB05</code> 分析原因并调整。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-2">案例</h4>
+<p>企业向供应商 B 采购原材料，金额为 3000 元：</p>
+<ul>
+  <li>进行发票校验后，生成会计凭证，借记原材料 3000 元，贷记应付账款 - 供应商 B 3000 元。</li>
+  <li>到了付款日，运行付款程序，系统生成付款凭证，借记应付账款 - 供应商 B 3000 元，贷记银行存款 3000 元。</li>
+</ul>
+
+<hr />
+
+<h3 id="14-资产会计asset-accounting">1.4 资产会计（Asset Accounting）</h3>
+
+<h4 id="知识点-3">知识点</h4>
+<ul>
+  <li><strong>资产主数据</strong>：记录固定资产的详细信息。</li>
+  <li><strong>资产购置</strong>：记录资产的购置成本。</li>
+  <li><strong>折旧计算</strong>：系统自动计算每月或每年的折旧金额。</li>
+  <li><strong>资产转移</strong>：当资产在企业内部不同部门或地点之间转移时。</li>
+  <li><strong>资产报废</strong>：核销资产价值并记录相关损益。</li>
+</ul>
+
+<h4 id="操作步骤-3">操作步骤</h4>
+<ol>
+  <li>创建资产主数据：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">AS01</code>，输入资产类别、资产编号等信息。</li>
+    </ul>
+  </li>
+  <li>资产购置：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">F-90</code>，输入资产编号、供应商编号等。</li>
+    </ul>
+  </li>
+  <li>折旧计算与过账：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">AFAB</code> 运行折旧计算程序。</li>
+    </ul>
+  </li>
+  <li>资产转移：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">ABUMN</code>，输入原资产编号、目标资产编号等。</li>
+    </ul>
+  </li>
+  <li>资产报废：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">ABAVN</code>，输入资产编号、报废原因等。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-3">案例</h4>
+<p>企业购置一台设备，价值 100000 元，使用年限为 10 年：</p>
+<ul>
+  <li>创建资产主数据，录入相关信息。</li>
+  <li>进行资产购置操作，生成会计凭证，借记固定资产 - 设备 100000 元，贷记银行存款 100000 元。</li>
+  <li>每月系统自动计算折旧金额为 833.33 元，生成折旧会计凭证，借记管理费用 - 折旧费 833.33 元，贷记累计折旧 - 设备 833.33 元。</li>
+</ul>
+
+<hr />
+
+<h2 id="二物料管理mm模块">二、物料管理（MM）模块</h2>
+
+<h3 id="21-物料主数据material-master-data">2.1 物料主数据（Material Master Data）</h3>
+
+<h4 id="知识点-4">知识点</h4>
+<ul>
+  <li><strong>基本数据视图</strong>：记录物料的通用信息。</li>
+  <li><strong>采购视图</strong>：包含采购相关信息。</li>
+  <li><strong>库存视图</strong>：记录库存管理信息。</li>
+  <li><strong>会计视图</strong>：用于财务核算。</li>
+</ul>
+
+<h4 id="操作步骤-4">操作步骤</h4>
+<ol>
+  <li>创建物料主数据：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">MM01</code>，输入行业领域、物料类型等信息。</li>
+    </ul>
+  </li>
+  <li>修改物料主数据：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">MM02</code>，输入物料编号修改信息。</li>
+    </ul>
+  </li>
+  <li>显示物料主数据：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">MM03</code>，查看详细内容。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-4">案例</h4>
+<p>某电子制造企业生产智能手机，创建手机屏幕的物料主数据：</p>
+<ul>
+  <li>基本数据视图：物料描述为 “XX 型号手机屏幕”，物料组为 “电子显示屏”。</li>
+  <li>采购视图：采购组为 “电子采购组”，主要供应商为 “供应商 A”。</li>
+  <li>库存视图：启用批次管理，设置库存地点为 “原材料仓库 1”。</li>
+</ul>
+
+<hr />
+
+<h3 id="22-采购管理purchasing">2.2 采购管理（Purchasing）</h3>
+
+<h4 id="知识点-5">知识点</h4>
+<ul>
+  <li><strong>采购申请</strong>：企业内部部门提出采购需求的单据。</li>
+  <li><strong>采购订单</strong>：向供应商发出的采购合同。</li>
+  <li><strong>供应商评估</strong>：对供应商的交货及时性、产品质量等进行评估。</li>
+  <li><strong>收货</strong>：收到供应商货物时，在系统中进行收货操作。</li>
+  <li><strong>发票校验</strong>：将供应商发票与采购订单、收货信息进行匹配。</li>
+</ul>
+
+<h4 id="操作步骤-5">操作步骤</h4>
+<ol>
+  <li>创建采购申请：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">ME51N</code>，输入工厂、采购组等信息。</li>
+    </ul>
+  </li>
+  <li>创建采购订单：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">ME21N</code>，基于采购申请创建订单。</li>
+    </ul>
+  </li>
+  <li>供应商评估：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">ME60</code>，选择评估期间、维度等。</li>
+    </ul>
+  </li>
+  <li>收货操作：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">MIGO</code>，选择 “采购订单收货”。</li>
+    </ul>
+  </li>
+  <li>发票校验：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">MIRO</code>，输入供应商编号、发票信息等。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-5">案例</h4>
+<p>企业生产部门因生产计划，使用 <code class="language-plaintext highlighter-rouge">ME51N</code> 创建采购申请，申请采购 1000 个手机电池：</p>
+<ul>
+  <li>采购部门通过 <code class="language-plaintext highlighter-rouge">ME21N</code> 创建采购订单，规定单价为 50 元 / 个。</li>
+  <li>10 天后，仓库人员使用 <code class="language-plaintext highlighter-rouge">MIGO</code> 对收到的 1000 个手机电池进行收货操作。</li>
+  <li>收到供应商 B 的发票，财务人员通过 <code class="language-plaintext highlighter-rouge">MIRO</code> 进行发票校验，匹配成功后确认应付账款。</li>
+</ul>
+
+<hr />
+
+<h3 id="23-库存管理inventory-management">2.3 库存管理（Inventory Management）</h3>
+
+<h4 id="知识点-6">知识点</h4>
+<ul>
+  <li><strong>入库</strong>：包括采购收货入库、生产入库、其他入库。</li>
+  <li><strong>出库</strong>：包括生产领料出库、销售出库、其他出库。</li>
+  <li><strong>库存盘点</strong>：定期对库存进行实地盘点。</li>
+  <li><strong>库存转移</strong>：物料在企业内部不同库存地点之间的转移。</li>
+</ul>
+
+<h4 id="操作步骤-6">操作步骤</h4>
+<ol>
+  <li>入库操作：
+    <ul>
+      <li>采购收货入库：使用事务代码 <code class="language-plaintext highlighter-rouge">MIGO</code>，选择 “采购订单收货”。</li>
+      <li>生产入库：使用事务代码 <code class="language-plaintext highlighter-rouge">MIGO</code>，选择 “生产订单收货”。</li>
+      <li>其他入库：使用事务代码 <code class="language-plaintext highlighter-rouge">MIGO</code>，选择 “其他收货”。</li>
+    </ul>
+  </li>
+  <li>出库操作：
+    <ul>
+      <li>生产领料出库：使用事务代码 <code class="language-plaintext highlighter-rouge">MB1A</code>，选择移动类型（如 261）。</li>
+      <li>销售出库：使用事务代码 <code class="language-plaintext highlighter-rouge">VL02N</code>，创建外向交货单。</li>
+      <li>其他出库：使用事务代码 <code class="language-plaintext highlighter-rouge">MB1A</code>，选择移动类型（如 551）。</li>
+    </ul>
+  </li>
+  <li>库存盘点：
+    <ul>
+      <li>创建盘点凭证：使用事务代码 <code class="language-plaintext highlighter-rouge">MI01</code>。</li>
+      <li>录入盘点结果：使用事务代码 <code class="language-plaintext highlighter-rouge">MI04</code>。</li>
+      <li>差异处理：使用事务代码 <code class="language-plaintext highlighter-rouge">MI20</code>。</li>
+    </ul>
+  </li>
+  <li>库存转移：
+    <ul>
+      <li>一步式转移：使用事务代码 <code class="language-plaintext highlighter-rouge">MB1B</code>，选择移动类型（如 311）。</li>
+      <li>两步式转移：先使用 MB1B 进行发出过账，再进行接收过账。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-6">案例</h4>
+<p>企业手机生产线生产完成 100 台手机：</p>
+<ul>
+  <li>使用 MIGO 进行生产入库操作，将成品手机入库到 “成品仓库”。</li>
+  <li>销售部门接到客户订单，通过 VL02N 创建外向交货单，完成 10 台手机的销售出库。</li>
+</ul>
+
+<hr />
+
+<h3 id="24-发票校验invoice-verification">2.4 发票校验（Invoice Verification）</h3>
+
+<h4 id="知识点-7">知识点</h4>
+<ul>
+  <li><strong>发票匹配</strong>：将供应商发票上的物料、数量、价格等信息与采购订单和收货单进行比对。</li>
+  <li><strong>差异处理</strong>：发票与采购订单或收货信息存在差异时的处理方法。</li>
+  <li><strong>生成会计凭证</strong>：发票校验通过后，系统自动生成会计凭证。</li>
+</ul>
+
+<h4 id="操作步骤-7">操作步骤</h4>
+<ol>
+  <li>发票录入：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">MIRO</code>，输入供应商编号、发票日期等基本信息。</li>
+    </ul>
+  </li>
+  <li>选择匹配方式并匹配发票：
+    <ul>
+      <li>根据业务需求选择匹配方式，选择对应的采购订单和收货单。</li>
+    </ul>
+  </li>
+  <li>差异处理：
+    <ul>
+      <li>若存在差异，系统提示差异类型和金额，需核实情况并手动调整。</li>
+    </ul>
+  </li>
+  <li>过账发票：
+    <ul>
+      <li>确认发票信息无误后，点击 “过账” 按钮生成会计凭证。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-7">案例</h4>
+<p>企业向供应商 C 采购一批电路板，采购订单数量为 500 块，单价为 100 元 / 块：</p>
+<ul>
+  <li>收货时实际收到 498 块，收到供应商 C 的发票，发票数量为 500 块，单价为 102 元 / 块。</li>
+  <li>财务人员使用 MIRO 进行发票校验，系统提示数量差异和价格差异。</li>
+  <li>经核实，确认数量差异是运输损耗，价格差异是供应商临时调价且已提前通知采购部门但未及时更新订单价格。</li>
+</ul>
+
+<hr />
+
+<h2 id="三销售与分销sd模块">三、销售与分销（SD）模块</h2>
+
+<h3 id="31-销售组织sales-organization">3.1 销售组织（Sales Organization）</h3>
+
+<h4 id="知识点-8">知识点</h4>
+<ul>
+  <li><strong>组织架构关系</strong>：销售组织与分销渠道、产品组共同构成 SD 模块的组织架构。</li>
+  <li><strong>业务职能</strong>：制定销售策略、管理客户关系、处理销售订单、安排交货和开票等。</li>
+</ul>
+
+<h4 id="操作步骤-8">操作步骤</h4>
+<ol>
+  <li>创建销售组织：
+    <ul>
+      <li>使用 IMG 路径进入设置界面，点击 “新建” 按钮，输入销售组织代码、名称和所属公司代码。</li>
+    </ul>
+  </li>
+  <li>分配分销渠道和产品组：
+    <ul>
+      <li>在 IMG 路径中分配分销渠道和产品组。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-8">案例</h4>
+<p>某大型家电制造企业创建了多个销售组织，分别对应不同的地理区域：</p>
+<ul>
+  <li>每个销售组织下设置了直销、批发等分销渠道，以及空调、冰箱等产品组。</li>
+</ul>
+
+<hr />
+
+<h3 id="32-客户主数据customer-master-data">3.2 客户主数据（Customer Master Data）</h3>
+
+<h4 id="知识点-9">知识点</h4>
+<ul>
+  <li><strong>数据视图分类</strong>：一般数据视图、销售数据视图、公司代码数据视图。</li>
+  <li><strong>信用管理</strong>：通过客户主数据中的信用额度、信用期限等设置，结合信用控制范围，对客户进行信用评估和风险管控。</li>
+</ul>
+
+<h4 id="操作步骤-9">操作步骤</h4>
+<ol>
+  <li>创建客户主数据：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">XD01</code>，输入客户名称、地址等基本信息。</li>
+    </ul>
+  </li>
+  <li>修改客户主数据：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">XD02</code>，输入客户编号修改信息。</li>
+    </ul>
+  </li>
+  <li>显示客户主数据：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">XD03</code>，查看详细内容。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-9">案例</h4>
+<p>某家具销售企业新开发了一家大型客户 “XX 家居连锁公司”：</p>
+<ul>
+  <li>使用 XD01 创建客户主数据，在一般数据视图录入客户公司名称、总部地址和联系人电话。</li>
+  <li>在销售数据视图，设置该客户属于 “零售” 分销渠道，采用特定的客户定价过程。</li>
+  <li>在公司代码数据视图，设定信用额度为 500 万元，付款条件为货到 45 天付款。</li>
+</ul>
+
+<hr />
+
+<h3 id="33-销售订单处理sales-order-processing">3.3 销售订单处理（Sales Order Processing）</h3>
+
+<h4 id="知识点-10">知识点</h4>
+<ul>
+  <li><strong>订单类型</strong>：标准订单、寄售订单、加急订单等。</li>
+  <li><strong>可用性检查</strong>：确保企业有能力按时交付货物。</li>
+  <li><strong>定价过程</strong>：根据客户主数据中的定价条件、销售订单中的产品和数量等因素，自动计算订单价格。</li>
+</ul>
+
+<h4 id="操作步骤-10">操作步骤</h4>
+<ol>
+  <li>创建销售订单：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">VA01</code>，选择订单类型，输入销售组织、分销渠道、产品组和售达方等信息。</li>
+    </ul>
+  </li>
+  <li>订单确认与可用性检查：
+    <ul>
+      <li>系统自动进行可用性检查，若检查通过可在 VA02 中对订单进行最终确认。</li>
+    </ul>
+  </li>
+  <li>订单后续处理：
+    <ul>
+      <li>确认后的订单可通过事务代码 VA03 查看详细信息，并触发后续的交货、开票等业务流程。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-10">案例</h4>
+<p>某服装销售企业接到客户 “时尚潮流服装店” 的订单，订购 1000 件新款 T 恤：</p>
+<ul>
+  <li>使用 VA01 创建标准销售订单，选择对应的销售组织、分销渠道和客户。</li>
+  <li>输入物料编号后，系统带出 T 恤的单价为 50 元 / 件，根据客户主数据中的折扣条件，自动计算出折扣后的总价。</li>
+  <li>系统进行可用性检查时，发现库存只有 800 件，企业通过 VA02 修改订单交货日期，并安排生产部门加急生产剩余的 200 件。</li>
+</ul>
+
+<hr />
+
+<h3 id="34-交货处理delivery-processing">3.4 交货处理（Delivery Processing）</h3>
+
+<h4 id="知识点-11">知识点</h4>
+<ul>
+  <li><strong>交货单创建</strong>：根据销售订单创建交货单。</li>
+  <li><strong>拣配与发货</strong>：从仓库中提取货物并进行发货过账。</li>
+</ul>
+
+<h4 id="操作步骤-11">操作步骤</h4>
+<ol>
+  <li>创建交货单：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">VL01N</code>，输入销售订单编号，系统自动带出订单中的物料、客户等信息。</li>
+    </ul>
+  </li>
+  <li>拣配货物：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">LT06</code> 进行拣配操作，记录实际拣配的货物数量和批次等信息。</li>
+    </ul>
+  </li>
+  <li>发货过账：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">VL02N</code> 对交货单进行发货过账。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-11">案例</h4>
+<p>上述服装销售企业针对 “时尚潮流服装店” 的订单：</p>
+<ul>
+  <li>使用 VL01N 根据销售订单创建交货单。</li>
+  <li>仓库人员接到交货单后，使用 LT06 进行拣配，从仓库中挑选出 1000 件新款 T 恤。</li>
+  <li>拣配完成后，通过 VL02N 对交货单进行发货过账。</li>
+</ul>
+
+<hr />
+
+<h3 id="35-发票处理billing-processing">3.5 发票处理（Billing Processing）</h3>
+
+<h4 id="知识点-12">知识点</h4>
+<ul>
+  <li><strong>发票类型</strong>：销售发票、贷项凭证、借项凭证等。</li>
+  <li><strong>发票校验与过账</strong>：生成发票后，需对发票内容进行校验，确保金额、物料等信息准确无误。</li>
+</ul>
+
+<h4 id="操作步骤-12">操作步骤</h4>
+<ol>
+  <li>创建发票：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">VF01</code>，选择发票类型，输入交货单编号等信息。</li>
+    </ul>
+  </li>
+  <li>发票校验：
+    <ul>
+      <li>使用事务代码 <code class="language-plaintext highlighter-rouge">VF02</code> 检查发票内容是否正确。</li>
+    </ul>
+  </li>
+  <li>发票过账：
+    <ul>
+      <li>校验通过后，在 VF02 中点击 “过账” 按钮生成会计凭证。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-12">案例</h4>
+<p>服装销售企业在完成向 “时尚潮流服装店” 的货物交付后：</p>
+<ul>
+  <li>使用 VF01 根据交货单创建销售发票，系统自动计算发票金额为 50000 元，加上增值税 6500 元，合计总金额 56500 元。</li>
+  <li>财务人员通过 VF02 对发票进行校验，确认无误后进行过账操作。</li>
+</ul>
+
+<hr />
+
+<h2 id="四hana数据库">四、HANA数据库</h2>
+
+<h3 id="41-hana数据库概述">4.1 HANA数据库概述</h3>
+
+<h4 id="知识点-13">知识点</h4>
+<ul>
+  <li><strong>内存计算技术</strong>：极大提升了数据处理速度，能够实现实时数据分析和复杂计算。</li>
+  <li><strong>列存储与行存储</strong>：列存储适用于数据分析场景，行存储则适用于事务处理。</li>
+  <li><strong>多模型数据处理</strong>：支持非结构化数据和空间数据的处理。</li>
+</ul>
+
+<h4 id="案例-13">案例</h4>
+<p>某电商企业每天产生海量的交易数据和用户行为数据：</p>
+<ul>
+  <li>使用 HANA 数据库后，基于内存计算技术，同样的数据分析任务在几分钟内即可完成，企业能够实时掌握销售趋势、用户偏好等信息。</li>
+</ul>
+
+<hr />
+
+<h3 id="42-hana数据库架构">4.2 HANA数据库架构</h3>
+
+<h4 id="知识点-14">知识点</h4>
+<ul>
+  <li><strong>硬件层</strong>：通常采用高性能的服务器集群。</li>
+  <li><strong>系统软件层</strong>：包含操作系统、虚拟化软件等。</li>
+  <li><strong>HANA数据库层</strong>：核心部分，包括数据存储引擎、计算引擎、事务处理引擎等。</li>
+  <li><strong>应用层</strong>：用户通过各种应用程序访问 HANA 数据库。</li>
+</ul>
+
+<h4 id="操作步骤-13">操作步骤</h4>
+<ol>
+  <li>硬件部署：
+    <ul>
+      <li>配置多台具有高主频 CPU、大容量内存和高速 SSD 的服务器。</li>
+    </ul>
+  </li>
+  <li>系统软件安装：
+    <ul>
+      <li>安装适合 HANA 运行的操作系统，配置好系统参数。</li>
+    </ul>
+  </li>
+  <li>HANA数据库安装与配置：
+    <ul>
+      <li>使用 HANA 安装包进行数据库安装，配置数据库实例。</li>
+    </ul>
+  </li>
+  <li>应用层部署：
+    <ul>
+      <li>将开发好的应用程序部署到应用服务器上。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-14">案例</h4>
+<p>一家大型制造企业计划部署 HANA 数据库以支持其智能制造业务：</p>
+<ul>
+  <li>在硬件层，采购了 10 台高性能服务器组成集群。</li>
+  <li>在系统软件层，安装 SUSE Linux 操作系统和 VMware vSphere 虚拟化软件。</li>
+  <li>安装 HANA 数据库时，为数据库实例分配 300GB 内存。</li>
+  <li>最后，将企业自主开发的生产数据分析应用部署到应用服务器，连接 HANA 数据库。</li>
+</ul>
+
+<hr />
+
+<h3 id="43-hana数据建模">4.3 HANA数据建模</h3>
+
+<h4 id="知识点-15">知识点</h4>
+<ul>
+  <li><strong>表和视图</strong>：HANA 中的表分为行存储表和列存储表，视图是虚拟的表。</li>
+  <li><strong>计算视图</strong>：HANA 的核心建模对象，支持属性视图、分析视图和计算视图。</li>
+  <li><strong>数据关系</strong>：定义表与表之间的关联关系。</li>
+</ul>
+
+<h4 id="操作步骤-14">操作步骤</h4>
+<ol>
+  <li>创建表：
+    <ul>
+      <li>在 HANA Studio 中，右键点击模式，选择 “新建” → “表”。</li>
+    </ul>
+  </li>
+  <li>创建视图：
+    <ul>
+      <li>同样在 HANA Studio 中，右键点击模式，选择 “新建” → “视图”。</li>
+    </ul>
+  </li>
+  <li>定义数据关系：
+    <ul>
+      <li>在创建表时设置外键字段，并关联到主表的主键。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-15">案例</h4>
+<p>某零售企业使用 HANA 数据库管理销售数据：</p>
+<ul>
+  <li>创建了 “销售订单表”、“客户表” 和 “产品表”。</li>
+  <li>创建一个计算视图，将 “销售订单表” 与 “客户表” 通过客户编号关联，添加计算列计算每个客户的订单数量和总销售额。</li>
+</ul>
+
+<hr />
+
+<h3 id="44-hana应用开发">4.4 HANA应用开发</h3>
+
+<h4 id="知识点-16">知识点</h4>
+<ul>
+  <li><strong>开发语言与技术</strong>：支持 SQL、SQLScript、Java、Python 等。</li>
+  <li><strong>应用接口</strong>：提供 OData、JDBC/ODBC 等接口。</li>
+  <li><strong>开发工具</strong>：主要使用 HANA Studio 和 SAP Web IDE。</li>
+</ul>
+
+<h4 id="操作步骤-15">操作步骤</h4>
+<ol>
+  <li>确定开发需求与技术选型：
+    <ul>
+      <li>明确应用的功能需求，选择合适的开发语言和技术。</li>
+    </ul>
+  </li>
+  <li>数据库开发：
+    <ul>
+      <li>在 HANA Studio 中编写存储过程、函数、视图等数据库对象。</li>
+    </ul>
+  </li>
+  <li>前端开发与集成：
+    <ul>
+      <li>使用前端开发技术开发用户界面，通过 OData 接口与 HANA 数据库连接。</li>
+    </ul>
+  </li>
+  <li>测试与部署：
+    <ul>
+      <li>对应用进行功能测试、性能测试和安全测试，测试通过后部署到生产环境。</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="案例-16">案例</h4>
+<p>某金融企业为了实现对客户信用风险的实时评估，基于 HANA 数据库进行应用开发：</p>
+<ul>
+  <li>后端使用 SQLScript 编写存储过程，从前端应用获取数据。</li>
+  <li>前端使用 SAPUI5 开发用户界面，通过 OData 接口获取后端计算的信用评分数据。</li>
+  <li>开发完成后，经过全面测试，将应用部署到企业的生产环境中。</li>
+</ul>
+
+<hr />
+
+  </div><a class="u-url" href="/blog/sap/2025/06/12/SAP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"></h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name"></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Matlab学习笔记</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Matlab学习笔记" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="MATLAB学习笔记" />
+<meta property="og:description" content="MATLAB学习笔记" />
+<link rel="canonical" href="http://localhost:4000/blog/matlab/2025/05/31/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" />
+<meta property="og:url" content="http://localhost:4000/blog/matlab/2025/05/31/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-05-31T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Matlab学习笔记" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-31T00:00:00+08:00","datePublished":"2025-05-31T00:00:00+08:00","description":"MATLAB学习笔记","headline":"Matlab学习笔记","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/matlab/2025/05/31/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"},"url":"http://localhost:4000/blog/matlab/2025/05/31/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" /></head>
+<body><a href="/" class="home-link">返回简历主页</a>
+<!-- 确保自定义样式被加载 -->
+<link rel="stylesheet" href="/blog/assets/css/main.scss"><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Matlab学习笔记</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-05-31T00:00:00+08:00" itemprop="datePublished">May 31, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="matlab学习笔记">MATLAB学习笔记</h1>
+
+<h2 id="一matlab基础">一、MATLAB基础</h2>
+<h3 id="11-界面介绍">1.1 界面介绍</h3>
+<p>MATLAB界面主要包含命令窗口（Command Window）、工作区（Workspace）、当前文件夹窗口（Current Folder）、编辑器（Editor）和图形窗口（Figure Window）等部分。</p>
+<ul>
+  <li><strong>命令窗口</strong>：用于输入命令并即时显示结果。例如，在命令窗口输入 <code class="language-plaintext highlighter-rouge">2 + 3</code>，回车后会显示 <code class="language-plaintext highlighter-rouge">ans = 5</code>，这里 <code class="language-plaintext highlighter-rouge">ans</code> 是默认的结果存储变量。</li>
+  <li><strong>工作区</strong>：展示当前创建或导入的所有变量及其属性，如变量名、数据类型、大小等。</li>
+  <li><strong>当前文件夹窗口</strong>：管理MATLAB的工作路径，方便查找和调用相关文件。</li>
+  <li><strong>编辑器</strong>：用于创建、编辑和保存 <code class="language-plaintext highlighter-rouge">.m</code> 脚本文件和函数文件。</li>
+  <li><strong>图形窗口</strong>：显示绘制的各类图形，如二维图、三维图等。</li>
+</ul>
+
+<h3 id="12-基本操作">1.2 基本操作</h3>
+<ul>
+  <li><strong>启动MATLAB</strong>：通过快捷方式或开始菜单找到MATLAB程序并启动。</li>
+  <li><strong>执行命令</strong>：在命令窗口直接输入命令，如数学运算、函数调用等。例如 <code class="language-plaintext highlighter-rouge">sqrt(16)</code> 会返回 <code class="language-plaintext highlighter-rouge">4</code>。</li>
+  <li><strong>查看帮助文档</strong>：使用 <code class="language-plaintext highlighter-rouge">help</code> 命令，如 <code class="language-plaintext highlighter-rouge">help plot</code> 可以查看 <code class="language-plaintext highlighter-rouge">plot</code> 函数的详细用法和示例。</li>
+  <li><strong>管理文件路径</strong>：通过 <code class="language-plaintext highlighter-rouge">pathtool</code> 命令打开路径管理器，添加、删除或调整MATLAB搜索文件的路径。</li>
+</ul>
+
+<h2 id="二变量与数据类型">二、变量与数据类型</h2>
+<h3 id="21-变量定义">2.1 变量定义</h3>
+<ul>
+  <li>变量名区分大小写，且必须以字母开头，可以包含字母、数字和下划线。例如 <code class="language-plaintext highlighter-rouge">myVariable1</code> 是合法的变量名，而 <code class="language-plaintext highlighter-rouge">1myVariable</code> 是非法的。</li>
+  <li>在MATLAB中，不需要预先声明变量类型，直接赋值即可创建变量。如 <code class="language-plaintext highlighter-rouge">a = 5;</code> 就创建了一个名为 <code class="language-plaintext highlighter-rouge">a</code> 的变量并赋值为 <code class="language-plaintext highlighter-rouge">5</code>。</li>
+</ul>
+
+<h3 id="22-数据类型">2.2 数据类型</h3>
+<h4 id="221-数值型">2.2.1 数值型</h4>
+<ul>
+  <li><strong>整数</strong>：包括有符号整数（如 <code class="language-plaintext highlighter-rouge">int8</code>、<code class="language-plaintext highlighter-rouge">int16</code>、<code class="language-plaintext highlighter-rouge">int32</code>、<code class="language-plaintext highlighter-rouge">int64</code>）和无符号整数（如 <code class="language-plaintext highlighter-rouge">uint8</code>、<code class="language-plaintext highlighter-rouge">uint16</code>、<code class="language-plaintext highlighter-rouge">uint32</code>、<code class="language-plaintext highlighter-rouge">uint64</code>）。不同类型表示的数值范围不同，例如 <code class="language-plaintext highlighter-rouge">int8</code> 能表示的范围是 <code class="language-plaintext highlighter-rouge">-128</code> 到 <code class="language-plaintext highlighter-rouge">127</code>，<code class="language-plaintext highlighter-rouge">uint8</code> 能表示的范围是 <code class="language-plaintext highlighter-rouge">0</code> 到 <code class="language-plaintext highlighter-rouge">255</code>。</li>
+  <li><strong>浮点数</strong>：分为单精度浮点数（<code class="language-plaintext highlighter-rouge">single</code>）和双精度浮点数（<code class="language-plaintext highlighter-rouge">double</code>）。双精度是MATLAB默认的数值类型，能提供更高的精度。例如 <code class="language-plaintext highlighter-rouge">x = 3.14159;</code> 这里 <code class="language-plaintext highlighter-rouge">x</code> 就是双精度浮点数。
+案例：创建一个 <code class="language-plaintext highlighter-rouge">int16</code> 类型的变量并进行简单运算。
+    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="nb">int16</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int16</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span> <span class="c1">% c 也是 int16 类型</span>
+</code></pre></div>    </div>
+    <h4 id="222-字符型与字符串">2.2.2 字符型与字符串</h4>
+  </li>
+  <li><strong>字符</strong>：用单引号括起来表示，如 <code class="language-plaintext highlighter-rouge">'a'</code>。</li>
+  <li><strong>字符串</strong>：由多个字符组成，用双引号括起来。在MATLAB中，字符串本质上是字符数组。例如 <code class="language-plaintext highlighter-rouge">str = "Hello, MATLAB!";</code>
+案例：获取字符串的长度。
+    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span> <span class="o">=</span> <span class="s2">"Hello, MATLAB!"</span><span class="p">;</span>
+<span class="n">len</span> <span class="o">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">str</span><span class="p">);</span> <span class="c1">% len 的值为 14</span>
+</code></pre></div>    </div>
+    <h4 id="223-逻辑型">2.2.3 逻辑型</h4>
+    <p>逻辑型数据只有两个取值：<code class="language-plaintext highlighter-rouge">true</code>（对应数值 <code class="language-plaintext highlighter-rouge">1</code>）和 <code class="language-plaintext highlighter-rouge">false</code>（对应数值 <code class="language-plaintext highlighter-rouge">0</code>）。常用于条件判断和逻辑运算。
+案例：判断一个数是否大于 <code class="language-plaintext highlighter-rouge">10</code>。</p>
+    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+<span class="nb">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">% result 为 true</span>
+</code></pre></div>    </div>
+    <h4 id="224-数组与矩阵">2.2.4 数组与矩阵</h4>
+  </li>
+  <li><strong>数组</strong>：可以是一维、二维或多维的。一维数组类似向量，二维数组类似矩阵，多维数组则用于更复杂的数据结构。例如创建一个一维数组 <code class="language-plaintext highlighter-rouge">arr = [1, 2, 3, 4];</code></li>
+  <li><strong>矩阵</strong>：是二维数组的一种特殊形式，常用于线性代数运算。创建矩阵时，元素之间用空格或逗号分隔行内元素，用分号分隔不同行。例如 <code class="language-plaintext highlighter-rouge">mat = [1 2 3; 4 5 6; 7 8 9];</code>
+案例：创建一个3x3的单位矩阵。
+    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div>    </div>
+    <h4 id="225-结构体">2.2.5 结构体</h4>
+    <p>结构体是一种可以包含不同数据类型的复合数据类型。通过字段名来访问其中的数据。
+案例：创建一个包含学生信息的结构体。</p>
+    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">student</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"John"</span><span class="p">;</span>
+<span class="n">student</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="n">student</span><span class="o">.</span><span class="n">gpa</span> <span class="o">=</span> <span class="mf">3.5</span><span class="p">;</span>
+</code></pre></div>    </div>
+    <h4 id="226-元胞数组">2.2.6 元胞数组</h4>
+    <p>元胞数组可以存储不同类型的数据，与结构体不同的是，元胞数组通过索引来访问元素，而结构体通过字段名访问。
+案例：创建一个包含字符串、数值和矩阵的元胞数组。</p>
+    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cellArray</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"string"</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">]</span> <span class="p">};</span>
+</code></pre></div>    </div>
+    <h3 id="23-数据类型转换">2.3 数据类型转换</h3>
+    <p>可以使用函数进行数据类型转换，如 <code class="language-plaintext highlighter-rouge">double()</code>、<code class="language-plaintext highlighter-rouge">int()</code>、<code class="language-plaintext highlighter-rouge">char()</code>、<code class="language-plaintext highlighter-rouge">logical()</code> 等。
+案例：将一个整数转换为双精度浮点数。</p>
+    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">double</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="c1">% b 现在是双精度浮点数</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="三矩阵与数组操作">三、矩阵与数组操作</h2>
+<h3 id="31-矩阵创建">3.1 矩阵创建</h3>
+<ul>
+  <li><strong>直接输入法</strong>：如前面提到的 <code class="language-plaintext highlighter-rouge">mat = [1 2 3; 4 5 6; 7 8 9];</code></li>
+  <li><strong>函数创建法</strong>：
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">zeros(m, n)</code> 创建一个 <code class="language-plaintext highlighter-rouge">m</code> 行 <code class="language-plaintext highlighter-rouge">n</code> 列的全零矩阵。例如 <code class="language-plaintext highlighter-rouge">zeros(2, 3)</code> 创建一个2行3列的全零矩阵。</li>
+      <li><code class="language-plaintext highlighter-rouge">ones(m, n)</code> 创建一个 <code class="language-plaintext highlighter-rouge">m</code> 行 <code class="language-plaintext highlighter-rouge">n</code> 列的全一矩阵。</li>
+      <li><code class="language-plaintext highlighter-rouge">eye(n)</code> 创建一个 <code class="language-plaintext highlighter-rouge">n</code> 阶单位矩阵。</li>
+      <li><code class="language-plaintext highlighter-rouge">rand(m, n)</code> 创建一个 <code class="language-plaintext highlighter-rouge">m</code> 行 <code class="language-plaintext highlighter-rouge">n</code> 列的随机矩阵，元素取值在 <code class="language-plaintext highlighter-rouge">0</code> 到 <code class="language-plaintext highlighter-rouge">1</code> 之间。例如 <code class="language-plaintext highlighter-rouge">rand(3, 3)</code> 创建一个3x3的随机矩阵。</li>
+      <li><code class="language-plaintext highlighter-rouge">randn(m, n)</code> 创建一个 <code class="language-plaintext highlighter-rouge">m</code> 行 <code class="language-plaintext highlighter-rouge">n</code> 列的服从标准正态分布的随机矩阵。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="32-矩阵运算">3.2 矩阵运算</h3>
+<ul>
+  <li><strong>算术运算</strong>：
+    <ul>
+      <li><strong>加法</strong>：<code class="language-plaintext highlighter-rouge">A + B</code>，要求 <code class="language-plaintext highlighter-rouge">A</code> 和 <code class="language-plaintext highlighter-rouge">B</code> 矩阵的大小相同。例如 <code class="language-plaintext highlighter-rouge">A = [1 2; 3 4]; B = [5 6; 7 8]; C = A + B;</code> 则 <code class="language-plaintext highlighter-rouge">C = [6 8; 10 12]</code>。</li>
+      <li><strong>减法</strong>：<code class="language-plaintext highlighter-rouge">A - B</code>，规则同加法。</li>
+      <li><strong>乘法</strong>：
+        <ul>
+          <li><strong>矩阵乘法</strong>：<code class="language-plaintext highlighter-rouge">A * B</code>，要求 <code class="language-plaintext highlighter-rouge">A</code> 的列数等于 <code class="language-plaintext highlighter-rouge">B</code> 的行数。例如 <code class="language-plaintext highlighter-rouge">A = [1 2; 3 4]; B = [5 6; 7 8]; C = A * B;</code> 计算结果 <code class="language-plaintext highlighter-rouge">C = [19 22; 43 50]</code>。</li>
+          <li><strong>点乘（对应元素相乘）</strong>：<code class="language-plaintext highlighter-rouge">A .* B</code>，要求 <code class="language-plaintext highlighter-rouge">A</code> 和 <code class="language-plaintext highlighter-rouge">B</code> 矩阵大小相同。例如 <code class="language-plaintext highlighter-rouge">A = [1 2; 3 4]; B = [5 6; 7 8]; C = A .* B;</code> 则 <code class="language-plaintext highlighter-rouge">C = [5 12; 21 32]</code>。</li>
+        </ul>
+      </li>
+      <li><strong>除法</strong>：
+        <ul>
+          <li><strong>左除</strong>：<code class="language-plaintext highlighter-rouge">A \ B</code>，可用于求解线性方程组 <code class="language-plaintext highlighter-rouge">Ax = B</code>。例如 <code class="language-plaintext highlighter-rouge">A = [1 2; 3 4]; B = [5; 6]; x = A \ B;</code> 可以求解出 <code class="language-plaintext highlighter-rouge">x</code>。</li>
+          <li><strong>右除</strong>：<code class="language-plaintext highlighter-rouge">A / B</code>，相当于 <code class="language-plaintext highlighter-rouge">A * inv(B)</code>，<code class="language-plaintext highlighter-rouge">inv</code> 是求逆矩阵函数。例如 <code class="language-plaintext highlighter-rouge">A = [1 2; 3 4]; B = [5 6; 7 8]; C = A / B;</code> 这里先求 <code class="language-plaintext highlighter-rouge">B</code> 的逆矩阵再与 <code class="language-plaintext highlighter-rouge">A</code> 相乘。</li>
+        </ul>
+      </li>
+      <li><strong>转置</strong>：<code class="language-plaintext highlighter-rouge">A'</code> 用于求矩阵 <code class="language-plaintext highlighter-rouge">A</code> 的转置。例如 <code class="language-plaintext highlighter-rouge">A = [1 2; 3 4]; B = A';</code> 则 <code class="language-plaintext highlighter-rouge">B = [1 3; 2 4]</code>。</li>
+    </ul>
+  </li>
+  <li><strong>特殊矩阵运算</strong>：
+    <ul>
+      <li><strong>求逆矩阵</strong>：<code class="language-plaintext highlighter-rouge">inv(A)</code> 计算矩阵 <code class="language-plaintext highlighter-rouge">A</code> 的逆矩阵，要求 <code class="language-plaintext highlighter-rouge">A</code> 是方阵且可逆。例如 <code class="language-plaintext highlighter-rouge">A = [1 2; 3 4]; B = inv(A);</code></li>
+      <li><strong>行列式</strong>：<code class="language-plaintext highlighter-rouge">det(A)</code> 计算方阵 <code class="language-plaintext highlighter-rouge">A</code> 的行列式。例如 <code class="language-plaintext highlighter-rouge">A = [1 2; 3 4]; det_A = det(A);</code> 结果 <code class="language-plaintext highlighter-rouge">det_A = -2</code>。</li>
+      <li><strong>特征值和特征向量</strong>：<code class="language-plaintext highlighter-rouge">[V, D] = eig(A)</code>，<code class="language-plaintext highlighter-rouge">V</code> 是特征向量矩阵，<code class="language-plaintext highlighter-rouge">D</code> 是特征值对角矩阵。例如 <code class="language-plaintext highlighter-rouge">A = [1 2; 3 4]; [V, D] = eig(A);</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="33-数组操作">3.3 数组操作</h3>
+<ul>
+  <li><strong>索引</strong>：通过索引来访问数组中的元素。对于一维数组 <code class="language-plaintext highlighter-rouge">arr = [1, 2, 3, 4];</code>，<code class="language-plaintext highlighter-rouge">arr(3)</code> 可以获取第三个元素 <code class="language-plaintext highlighter-rouge">3</code>。对于二维数组 <code class="language-plaintext highlighter-rouge">mat = [1 2 3; 4 5 6; 7 8 9];</code>，<code class="language-plaintext highlighter-rouge">mat(2, 3)</code> 可以获取第二行第三列的元素 <code class="language-plaintext highlighter-rouge">6</code>。</li>
+  <li><strong>切片</strong>：可以提取数组的一部分。例如对于一维数组 <code class="language-plaintext highlighter-rouge">arr = [1, 2, 3, 4, 5];</code>，<code class="language-plaintext highlighter-rouge">arr(2:4)</code> 可以获取从第二个元素到第四个元素的子数组 <code class="language-plaintext highlighter-rouge">[2 3 4]</code>。对于二维数组 <code class="language-plaintext highlighter-rouge">mat = [1 2 3; 4 5 6; 7 8 9];</code>，<code class="language-plaintext highlighter-rouge">mat(1:2, 2:3)</code> 可以获取第一行到第二行，第二列到第三列的子矩阵 <code class="language-plaintext highlighter-rouge">[2 3; 5 6]</code>。</li>
+  <li><strong>重塑</strong>：使用 <code class="language-plaintext highlighter-rouge">reshape</code> 函数改变数组的形状。例如 <code class="language-plaintext highlighter-rouge">arr = [1 2 3 4 5 6]; new_arr = reshape(arr, 2, 3);</code> 会将 <code class="language-plaintext highlighter-rouge">arr</code> 重塑为一个2行3列的矩阵 <code class="language-plaintext highlighter-rouge">[1 3 5; 2 4 6]</code>。</li>
+  <li><strong>连接</strong>：使用 <code class="language-plaintext highlighter-rouge">cat</code> 函数连接数组。例如 <code class="language-plaintext highlighter-rouge">A = [1 2; 3 4]; B = [5 6; 7 8]; C = cat(1, A, B);</code> 会将 <code class="language-plaintext highlighter-rouge">A</code> 和 <code class="language-plaintext highlighter-rouge">B</code> 按行连接成一个新矩阵 <code class="language-plaintext highlighter-rouge">C = [1 2; 3 4; 5 6; 7 8]</code>，这里 <code class="language-plaintext highlighter-rouge">1</code> 表示按行连接，若为 <code class="language-plaintext highlighter-rouge">2</code> 则表示按列连接。</li>
+</ul>
+
+<h2 id="四基本数学运算与函数">四、基本数学运算与函数</h2>
+<h3 id="41-基本数学运算">4.1 基本数学运算</h3>
+<p>包括加法（<code class="language-plaintext highlighter-rouge">+</code>）、减法（<code class="language-plaintext highlighter-rouge">-</code>）、乘法（<code class="language-plaintext highlighter-rouge">*</code>）、除法（<code class="language-plaintext highlighter-rouge">/</code>）、幂运算（<code class="language-plaintext highlighter-rouge">^</code>）等。这些运算可以对数值、数组和矩阵进行操作，遵循相应的运算规则，如矩阵乘法的维度匹配规则等。
+案例：计算 <code class="language-plaintext highlighter-rouge">3^4 + 5 * 2 - 8 / 2</code>。</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">result</span> <span class="o">=</span> <span class="mi">3</span><span class="o">^</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">8</span> <span class="p">/</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">% result 的值为 81 + 10 - 4 = 87</span>
+</code></pre></div></div>
+<h3 id="42-三角函数">4.2 三角函数</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">sin(x)</code>：计算 <code class="language-plaintext highlighter-rouge">x</code> 的正弦值，<code class="language-plaintext highlighter-rouge">x</code> 的单位为弧度。例如 <code class="language-plaintext highlighter-rouge">sin(pi/2)</code> 返回 <code class="language-plaintext highlighter-rouge">1</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">cos(x)</code>：计算 <code class="language-plaintext highlighter-rouge">x</code> 的余弦值。</li>
+  <li><code class="language-plaintext highlighter-rouge">tan(x)</code>：计算 <code class="language-plaintext highlighter-rouge">x</code> 的正切值。</li>
+  <li>还有对应的反三角函数 <code class="language-plaintext highlighter-rouge">asin(x)</code>、<code class="language-plaintext highlighter-rouge">acos(x)</code>、<code class="language-plaintext highlighter-rouge">atan(x)</code> 等。
+案例：计算 <code class="language-plaintext highlighter-rouge">45</code> 度角的正弦值（需将角度转换为弧度）。
+    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">angle</span> <span class="o">=</span> <span class="mi">45</span> <span class="o">*</span> <span class="nb">pi</span> <span class="p">/</span> <span class="mi">180</span><span class="p">;</span> <span class="c1">% 将 45 度转换为弧度</span>
+<span class="n">sin_value</span> <span class="o">=</span> <span class="nb">sin</span><span class="p">(</span><span class="nb">angle</span><span class="p">);</span> <span class="c1">% sin_value 的值约为 0.7071</span>
+</code></pre></div>    </div>
+    <h3 id="43-指数与对数函数">4.3 指数与对数函数</h3>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">exp(x)</code>：计算 <code class="language-plaintext highlighter-rouge">e</code> 的 <code class="language-plaintext highlighter-rouge">x</code> 次幂。例如 <code class="language-plaintext highlighter-rouge">exp(1)</code> 返回自然常数 <code class="language-plaintext highlighter-rouge">e</code> 的近似值 <code class="language-plaintext highlighter-rouge">2.7183</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">log(x)</code>：计算以 <code class="language-plaintext highlighter-rouge">e</code> 为底 <code class="language-plaintext highlighter-rouge">x</code> 的对数。例如 <code class="language-plaintext highlighter-rouge">log(exp(3))</code> 返回 <code class="language-plaintext highlighter-rouge">3</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">log10(x)</code>：计算以 <code class="language-plaintext highlighter-rouge">10</code> 为底 <code class="language-plaintext highlighter-rouge">x</code> 的对数。
+案例：计算 <code class="language-plaintext highlighter-rouge">100</code> 的以 <code class="language-plaintext highlighter-rouge">10</code> 为底的对数。
+    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">log_value</span> <span class="o">=</span> <span class="nb">log10</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">% log_value 的值为 2</span>
+</code></pre></div>    </div>
+    <h3 id="44-随机数生成">4.4 随机数生成</h3>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">rand()</code>：生成一个在 <code class="language-plaintext highlighter-rouge">0</code> 到 <code class="language-plaintext highlighter-rouge">1</code> 之间的随机小数。</li>
+  <li><code class="language-plaintext highlighter-rouge">rand(n)</code>：生成一个 <code class="language-plaintext highlighter-rouge">n</code> x <code class="language-plaintext highlighter-rouge">n</code> 的随机矩阵，元素取值在 <code class="language-plaintext highlighter-rouge">0</code> 到 <code class="language-plaintext highlighter-rouge">1</code> 之间。</li>
+  <li><code class="language-plaintext highlighter-rouge">randn()</code>：生成一个服从标准正态分布的随机小数。</li>
+  <li><code class="language-plaintext highlighter-rouge">randn(n)</code>：生成一个 <code class="language-plaintext highlighter-rouge">n</code> x <code class="language-plaintext highlighter-rouge">n</code> 的服从标准正态分布的随机矩阵。
+案例：生成一个包含10个随机整数（范围在1到100）的数组。
+    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">random_array</span> <span class="o">=</span> <span class="nb">randi</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">% 生成1x10的随机整数数组</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="五图形绘制与数据可视化">五、图形绘制与数据可视化</h2>
+<h3 id="51-二维图形绘制">5.1 二维图形绘制</h3>
+<ul>
+  <li><strong>折线图</strong>：<code class="language-plaintext highlighter-rouge">plot(x, y)</code>，<code class="language-plaintext highlighter-rouge">x</code> 和 <code class="language-plaintext highlighter-rouge">y</code> 分别为横坐标和纵坐标的数据。例如 <code class="language-plaintext highlighter-rouge">x = 1:10; y = x.^2; plot(x, y);</code> 会绘制出 <code class="language-plaintext highlighter-rouge">y = x^2</code> 在 <code class="language-plaintext highlighter-rouge">x</code> 从 <code class="language-plaintext highlighter-rouge">1</code> 到 <code class="language-plaintext highlighter-rouge">10</code> 时的折线图。</li>
+  <li><strong>散点图</strong>：<code class="language-plaintext highlighter-rouge">scatter(x, y)</code>，用于展示数据点的分布情况。例如 <code class="language-plaintext highlighter-rouge">x = randn(1, 50); y = randn(1, 50); scatter(x, y);</code> 会生成50个随机分布的散点。</li>
+  <li><strong>柱状图</strong>：<code class="language-plaintext highlighter-rouge">bar(x, y)</code>，<code class="language-plaintext highlighter-rouge">x</code> 通常为类别标签，<code class="language-plaintext highlighter-rouge">y</code> 为对应类别的数值。例如 <code class="language-plaintext highlighter-rouge">x = {'A', 'B', 'C'}; y = [10, 20, 15]; bar(x, y);</code> 会绘制出一个包含三个柱子的柱状图。
+    <h3 id="52-三维图形绘制">5.2 三维图形绘制</h3>
+  </li>
+  <li><strong>曲面图</strong>：<code class="language-plaintext highlighter-rouge">surf(X, Y, Z)</code>，<code class="language-plaintext highlighter-rouge">X</code>、<code class="language-plaintext highlighter-rouge">Y</code> 为网格坐标矩阵，<code class="language-plaintext highlighter-rouge">Z</code> 为对应的函数值矩阵。例如 <code class="language-plaintext highlighter-rouge">[X, Y] = meshgrid(-2:0.2:2); Z = X.^2 + Y.^2; surf(X, Y, Z);</code> 会绘制出 <code class="language-plaintext highlighter-rouge">z = x^2 + y^2</code> 的三维曲面图。</li>
+  <li><strong>网格图</strong>：<code class="language-plaintext highlighter-rouge">mesh(X, Y, Z)</code>，与曲面图类似，但只绘制网格线。例如 <code class="language-plaintext highlighter-rouge">[X, Y] = meshgrid(-2:0.2:2); Z = X.^2 + Y.^2; mesh(X, Y, Z);</code></li>
+  <li><strong>三维散点图</strong>：<code class="language-plaintext highlighter-rouge">scatter3(x, y, z)</code>，用于展示三维空间中的数据点分布。例如 <code class="language-plaintext highlighter-rouge">x = randn(1, 30); y = randn(1, 30); z = randn(1, 30); scatter3(x, y, z);</code></li>
+</ul>
+
+<h3 id="53-图形属性设置">5.3 图形属性设置</h3>
+<ul>
+  <li><strong>标题</strong>：<code class="language-plaintext highlighter-rouge">title('图形标题')</code>，用于设置图形的标题。例如 <code class="language-plaintext highlighter-rouge">plot(x, y); title('y = x^2 图形');</code></li>
+  <li><strong>坐标轴标签</strong>：<code class="language-plaintext highlighter-rouge">xlabel('x 轴标签')</code>，<code class="language-plaintext highlighter-rouge">ylabel('y 轴标签')</code>，<code class="language-plaintext highlighter-rouge">zlabel('z 轴标签')</code> 分别用于设置 <code class="language-plaintext highlighter-rouge">x</code> 轴、<code class="language-plaintext highlighter-rouge">y</code> 轴和 <code class="language-plaintext highlighter-rouge">z</code> 轴的标签。例如 <code class="language-plaintext highlighter-rouge">plot(x, y); xlabel('x'); ylabel('y = x^2');</code></li>
+  <li><strong>图例</strong>：<code class="language-plaintext highlighter-rouge">legend('曲线1', '曲线2', ...)</code>，用于标注图形中不同曲线或数据的含义。例如 `x = 1:10; y1 = x; y2 = x.^2; plot(x, y1, ‘r -‘, x以下是基于MATLAB教程免费中文版整理的详细笔记，涵盖主要知识点并附案例说明：</li>
+</ul>
+
+<h3 id="1-matlab基础"><strong>1. MATLAB基础</strong></h3>
+<h4 id="11-基本数据类型"><strong>1.1 基本数据类型</strong></h4>
+<ul>
+  <li><strong>数值类型</strong>：<code class="language-plaintext highlighter-rouge">double</code>（默认）、<code class="language-plaintext highlighter-rouge">single</code>、<code class="language-plaintext highlighter-rouge">int8/16/32/64</code>、<code class="language-plaintext highlighter-rouge">uint8/16/32/64</code></li>
+  <li><strong>逻辑类型</strong>：<code class="language-plaintext highlighter-rouge">true</code>/<code class="language-plaintext highlighter-rouge">false</code></li>
+  <li><strong>字符类型</strong>：<code class="language-plaintext highlighter-rouge">'hello'</code>（字符数组）或<code class="language-plaintext highlighter-rouge">string</code>（字符串对象）</li>
+  <li><strong>单元数组</strong>：<code class="language-plaintext highlighter-rouge">C = {1, 'text', [1 2 3]}</code></li>
+  <li><strong>结构体</strong>：<code class="language-plaintext highlighter-rouge">S.name = 'John'; S.age = 30</code></li>
+</ul>
+
+<p><strong>案例</strong>：创建不同类型变量</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>               <span class="c1">% double</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int8</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>          <span class="c1">% 有符号8位整数</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>               <span class="c1">% 逻辑值</span>
+<span class="n">d</span> <span class="o">=</span> <span class="s1">'MATLAB'</span><span class="p">;</span>           <span class="c1">% 字符数组</span>
+<span class="n">e</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Hello"</span><span class="p">,</span> <span class="s2">"World"</span><span class="p">];</span> <span class="c1">% 字符串数组</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">i</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">]};</span> <span class="c1">% 单元数组</span>
+<span class="n">g</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">g</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">];</span>  <span class="c1">% 结构体</span>
+</code></pre></div></div>
+
+<h4 id="12-变量与赋值"><strong>1.2 变量与赋值</strong></h4>
+<ul>
+  <li>变量名区分大小写，以字母开头</li>
+  <li>赋值语句：<code class="language-plaintext highlighter-rouge">x = 5; y = sin(x)</code></li>
+  <li>特殊变量：<code class="language-plaintext highlighter-rouge">ans</code>（临时结果）、<code class="language-plaintext highlighter-rouge">pi</code>、<code class="language-plaintext highlighter-rouge">inf</code>、<code class="language-plaintext highlighter-rouge">NaN</code></li>
+</ul>
+
+<p><strong>案例</strong>：计算圆面积</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nb">area</span> <span class="o">=</span> <span class="nb">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="o">^</span><span class="mi">2</span><span class="p">;</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s1">'半径为%d的圆面积为%.2f\n'</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="nb">area</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="2-矩阵与数组操作"><strong>2. 矩阵与数组操作</strong></h3>
+<h4 id="21-矩阵创建"><strong>2.1 矩阵创建</strong></h4>
+<ul>
+  <li>直接创建：<code class="language-plaintext highlighter-rouge">A = [1 2 3; 4 5 6; 7 8 9]</code></li>
+  <li>函数创建：<code class="language-plaintext highlighter-rouge">zeros(3,4)</code>、<code class="language-plaintext highlighter-rouge">ones(2)</code>、<code class="language-plaintext highlighter-rouge">eye(3)</code>、<code class="language-plaintext highlighter-rouge">rand(3)</code></li>
+  <li>冒号表达式：<code class="language-plaintext highlighter-rouge">v = 1:2:10</code>（从1到10，步长2）</li>
+</ul>
+
+<p><strong>案例</strong>：创建希尔伯特矩阵</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">H</span> <span class="o">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span>
+        <span class="n">H</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span><span class="p">/(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">H</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="22-矩阵运算"><strong>2.2 矩阵运算</strong></h4>
+<ul>
+  <li>算术运算：<code class="language-plaintext highlighter-rouge">+</code>、<code class="language-plaintext highlighter-rouge">-</code>、<code class="language-plaintext highlighter-rouge">*</code>、<code class="language-plaintext highlighter-rouge">/</code>、<code class="language-plaintext highlighter-rouge">^</code></li>
+  <li>点运算：<code class="language-plaintext highlighter-rouge">.*</code>、<code class="language-plaintext highlighter-rouge">./</code>、<code class="language-plaintext highlighter-rouge">.^</code>（元素级运算）</li>
+  <li>转置：<code class="language-plaintext highlighter-rouge">A'</code></li>
+  <li>逆矩阵：<code class="language-plaintext highlighter-rouge">inv(A)</code></li>
+  <li>行列式：<code class="language-plaintext highlighter-rouge">det(A)</code></li>
+</ul>
+
+<p><strong>案例</strong>：解线性方程组 <code class="language-plaintext highlighter-rouge">Ax = b</code></p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">5</span> <span class="mi">7</span><span class="p">];</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">;</span> <span class="mi">13</span><span class="p">];</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="p">\</span><span class="n">b</span><span class="p">;</span> <span class="c1">% 等价于 inv(A)*b</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s1">'解为 x=%.2f, y=%.2f\n'</span><span class="p">,</span> <span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h3 id="3-流程控制"><strong>3. 流程控制</strong></h3>
+<h4 id="31-条件语句"><strong>3.1 条件语句</strong></h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">if-elseif-else</code></li>
+  <li><code class="language-plaintext highlighter-rouge">switch-case</code></li>
+</ul>
+
+<p><strong>案例</strong>：判断成绩等级</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">score</span> <span class="o">=</span> <span class="mi">85</span><span class="p">;</span>
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">'A'</span><span class="p">;</span>
+<span class="k">elseif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">'B'</span><span class="p">;</span>
+<span class="k">elseif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">'C'</span><span class="p">;</span>
+<span class="k">else</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="s1">'D'</span><span class="p">;</span>
+<span class="k">end</span>
+<span class="nb">disp</span><span class="p">([</span><span class="s1">'成绩等级：'</span> <span class="n">grade</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<h4 id="32-循环语句"><strong>3.2 循环语句</strong></h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">for</code> 循环：<code class="language-plaintext highlighter-rouge">for i = 1:n</code></li>
+  <li><code class="language-plaintext highlighter-rouge">while</code> 循环：<code class="language-plaintext highlighter-rouge">while condition</code></li>
+  <li>循环控制：<code class="language-plaintext highlighter-rouge">break</code>、<code class="language-plaintext highlighter-rouge">continue</code></li>
+</ul>
+
+<p><strong>案例</strong>：计算斐波那契数列</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">fib</span> <span class="o">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">fib</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">:</span><span class="n">n</span>
+    <span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+<span class="k">end</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">fib</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="4-函数编写"><strong>4. 函数编写</strong></h3>
+<h4 id="41-脚本文件与函数文件"><strong>4.1 脚本文件与函数文件</strong></h4>
+<ul>
+  <li>脚本：无输入输出，直接执行命令</li>
+  <li>函数：有输入输出参数，格式为：
+    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="p">[</span><span class="n">outputs</span><span class="p">]</span> <span class="o">=</span> <span class="n">functionName</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="c1">% 函数体</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>案例</strong>：计算阶乘的函数</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nb">result</span> <span class="o">=</span> <span class="nb">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span>
+        <span class="nb">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="nb">result</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="nb">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="c1">% 递归调用</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h4 id="42-匿名函数"><strong>4.2 匿名函数</strong></h4>
+<ul>
+  <li>轻量级函数：<code class="language-plaintext highlighter-rouge">f = @(x) x^2 + 2*x + 1</code></li>
+</ul>
+
+<p><strong>案例</strong>：计算积分</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="o">@</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">integral_value</span> <span class="o">=</span> <span class="nb">integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">([</span><span class="s1">'积分结果：'</span> <span class="nb">num2str</span><span class="p">(</span><span class="n">integral_value</span><span class="p">)]);</span>
+</code></pre></div></div>
+
+<h3 id="5-数据可视化"><strong>5. 数据可视化</strong></h3>
+<h4 id="51-二维绘图"><strong>5.1 二维绘图</strong></h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">plot(x, y)</code>：绘制折线图</li>
+  <li>绘图参数：<code class="language-plaintext highlighter-rouge">'r--'</code>（红色虚线）、<code class="language-plaintext highlighter-rouge">'LineWidth', 2</code></li>
+  <li>坐标轴设置：<code class="language-plaintext highlighter-rouge">xlabel</code>、<code class="language-plaintext highlighter-rouge">ylabel</code>、<code class="language-plaintext highlighter-rouge">title</code>、<code class="language-plaintext highlighter-rouge">legend</code></li>
+</ul>
+
+<p><strong>案例</strong>：绘制正弦和余弦曲线</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">;</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="s1">'b-'</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="s1">'r--'</span><span class="p">,</span> <span class="s1">'LineWidth'</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">);</span> <span class="nb">ylabel</span><span class="p">(</span><span class="s1">'y'</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s1">'正弦和余弦曲线'</span><span class="p">);</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s1">'sin(x)'</span><span class="p">,</span> <span class="s1">'cos(x)'</span><span class="p">);</span>
+<span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="52-三维绘图"><strong>5.2 三维绘图</strong></h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">plot3(x, y, z)</code>：三维曲线</li>
+  <li><code class="language-plaintext highlighter-rouge">mesh(X, Y, Z)</code>：网格图</li>
+  <li><code class="language-plaintext highlighter-rouge">surf(X, Y, Z)</code>：曲面图</li>
+</ul>
+
+<p><strong>案例</strong>：绘制三维曲面</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">]</span> <span class="o">=</span> <span class="nb">meshgrid</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">X</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Y</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+<span class="nb">surf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">);</span>
+<span class="nb">shading</span> <span class="n">interp</span><span class="p">;</span> <span class="c1">% 平滑着色</span>
+<span class="nb">colorbar</span><span class="p">;</span> <span class="c1">% 显示颜色条</span>
+<span class="nb">title</span><span class="p">(</span><span class="s1">'抛物面 z = x² + y²'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="6-文件操作"><strong>6. 文件操作</strong></h3>
+<h4 id="61-文件读写"><strong>6.1 文件读写</strong></h4>
+<ul>
+  <li>文本文件：<code class="language-plaintext highlighter-rouge">fopen</code>、<code class="language-plaintext highlighter-rouge">fprintf</code>、<code class="language-plaintext highlighter-rouge">fscanf</code>、<code class="language-plaintext highlighter-rouge">fclose</code></li>
+  <li>二进制文件：<code class="language-plaintext highlighter-rouge">fread</code>、<code class="language-plaintext highlighter-rouge">fwrite</code></li>
+  <li>MAT文件：<code class="language-plaintext highlighter-rouge">save</code>、<code class="language-plaintext highlighter-rouge">load</code></li>
+</ul>
+
+<p><strong>案例</strong>：读写文本文件</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">% 写入文件</span>
+<span class="n">fid</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s1">'data.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">);</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span> <span class="s1">'%d %f\n'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">);</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span> <span class="s1">'%d %f\n'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.71</span><span class="p">);</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
+
+<span class="c1">% 读取文件</span>
+<span class="n">fid</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s1">'data.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">);</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nb">fscanf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span> <span class="s1">'%d %f'</span><span class="p">);</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nb">reshape</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[])</span><span class="o">'</span><span class="p">;</span> <span class="c1">% 重塑为矩阵</span>
+</code></pre></div></div>
+
+<h3 id="7-数据分析与统计"><strong>7. 数据分析与统计</strong></h3>
+<h4 id="71-基本统计函数"><strong>7.1 基本统计函数</strong></h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">mean</code>、<code class="language-plaintext highlighter-rouge">median</code>、<code class="language-plaintext highlighter-rouge">std</code>、<code class="language-plaintext highlighter-rouge">var</code>、<code class="language-plaintext highlighter-rouge">min</code>、<code class="language-plaintext highlighter-rouge">max</code>、<code class="language-plaintext highlighter-rouge">sum</code></li>
+</ul>
+
+<p><strong>案例</strong>：分析数据集</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">92</span><span class="p">];</span>
+<span class="n">avg</span> <span class="o">=</span> <span class="nb">mean</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="n">std_dev</span> <span class="o">=</span> <span class="nb">std</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s1">'平均值：%.2f，标准差：%.2f\n'</span><span class="p">,</span> <span class="n">avg</span><span class="p">,</span> <span class="n">std_dev</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="72-多项式拟合"><strong>7.2 多项式拟合</strong></h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">polyfit(x, y, n)</code>：n次多项式拟合</li>
+  <li><code class="language-plaintext highlighter-rouge">polyval(p, x)</code>：多项式求值</li>
+</ul>
+
+<p><strong>案例</strong>：拟合数据点</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">];</span>
+<span class="n">p</span> <span class="o">=</span> <span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">% 二次多项式拟合</span>
+<span class="n">x_fit</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5</span><span class="p">;</span>
+<span class="n">y_fit</span> <span class="o">=</span> <span class="nb">polyval</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x_fit</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">'ro'</span><span class="p">,</span> <span class="n">x_fit</span><span class="p">,</span> <span class="n">y_fit</span><span class="p">,</span> <span class="s1">'b-'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="8-符号计算"><strong>8. 符号计算</strong></h3>
+<h4 id="81-符号变量与表达式"><strong>8.1 符号变量与表达式</strong></h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">syms x y</code>：定义符号变量</li>
+  <li>符号运算：<code class="language-plaintext highlighter-rouge">expand</code>、<code class="language-plaintext highlighter-rouge">factor</code>、<code class="language-plaintext highlighter-rouge">simplify</code>、<code class="language-plaintext highlighter-rouge">diff</code>、<code class="language-plaintext highlighter-rouge">int</code></li>
+</ul>
+
+<p><strong>案例</strong>：求解方程和微分</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">syms</span> <span class="n">x</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span>
+<span class="c1">% 解方程 ax²+bx+c=0</span>
+<span class="n">eqn</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">eqn</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s1">'方程的解：'</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">sol</span><span class="p">);</span>
+
+<span class="c1">% 求导</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">df</span> <span class="o">=</span> <span class="nb">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">([</span><span class="s1">'f(x)的导数：'</span> <span class="nb">char</span><span class="p">(</span><span class="n">df</span><span class="p">)]);</span>
+</code></pre></div></div>
+
+<h3 id="9-工具箱应用以图像处理为例"><strong>9. 工具箱应用（以图像处理为例）</strong></h3>
+<h4 id="91-图像读取与显示"><strong>9.1 图像读取与显示</strong></h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">imread</code>、<code class="language-plaintext highlighter-rouge">imshow</code>、<code class="language-plaintext highlighter-rouge">imwrite</code></li>
+</ul>
+
+<p><strong>案例</strong>：图像灰度化与边缘检测</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">img</span> <span class="o">=</span> <span class="nb">imread</span><span class="p">(</span><span class="s1">'peppers.png'</span><span class="p">);</span> <span class="c1">% 读取图像</span>
+<span class="n">gray_img</span> <span class="o">=</span> <span class="nb">rgb2gray</span><span class="p">(</span><span class="n">img</span><span class="p">);</span>    <span class="c1">% 转为灰度图</span>
+<span class="n">edge_img</span> <span class="o">=</span> <span class="n">edge</span><span class="p">(</span><span class="n">gray_img</span><span class="p">,</span> <span class="s1">'Sobel'</span><span class="p">);</span> <span class="c1">% 边缘检测</span>
+
+<span class="nb">figure</span><span class="p">;</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="nb">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">);</span> <span class="nb">title</span><span class="p">(</span><span class="s1">'原始图像'</span><span class="p">);</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span> <span class="nb">imshow</span><span class="p">(</span><span class="n">gray_img</span><span class="p">);</span> <span class="nb">title</span><span class="p">(</span><span class="s1">'灰度图像'</span><span class="p">);</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span> <span class="nb">imshow</span><span class="p">(</span><span class="n">edge_img</span><span class="p">);</span> <span class="nb">title</span><span class="p">(</span><span class="s1">'边缘检测'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="10-程序调试与优化"><strong>10. 程序调试与优化</strong></h3>
+<h4 id="101-调试工具"><strong>10.1 调试工具</strong></h4>
+<ul>
+  <li>设置断点：<code class="language-plaintext highlighter-rouge">dbstop in filename at line</code></li>
+  <li>调试命令：<code class="language-plaintext highlighter-rouge">dbstep</code>、<code class="language-plaintext highlighter-rouge">dbcont</code>、<code class="language-plaintext highlighter-rouge">dbstack</code></li>
+</ul>
+
+<p><strong>案例</strong>：调试含错误的函数</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nb">result</span> <span class="o">=</span> <span class="n">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="nb">error</span><span class="p">(</span><span class="s1">'除数不能为零！'</span><span class="p">);</span> <span class="c1">% 抛出错误</span>
+    <span class="k">end</span>
+    <span class="nb">result</span> <span class="o">=</span> <span class="n">a</span> <span class="p">/</span> <span class="n">b</span><span class="p">;</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+  </div><a class="u-url" href="/blog/matlab/2025/05/31/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"></h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name"></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

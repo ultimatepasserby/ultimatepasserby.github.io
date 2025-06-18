@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Python数据分析学习笔记</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Python数据分析学习笔记" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Python 数据分析学习笔记" />
+<meta property="og:description" content="Python 数据分析学习笔记" />
+<link rel="canonical" href="http://localhost:4000/blog/python/2021/08/20/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" />
+<meta property="og:url" content="http://localhost:4000/blog/python/2021/08/20/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-20T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Python数据分析学习笔记" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-20T00:00:00+08:00","datePublished":"2021-08-20T00:00:00+08:00","description":"Python 数据分析学习笔记","headline":"Python数据分析学习笔记","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/python/2021/08/20/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"},"url":"http://localhost:4000/blog/python/2021/08/20/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" /></head>
+<body><a href="/" class="home-link">返回简历主页</a>
+<!-- 确保自定义样式被加载 -->
+<link rel="stylesheet" href="/blog/assets/css/main.scss"><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python数据分析学习笔记</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-08-20T00:00:00+08:00" itemprop="datePublished">Aug 20, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="python-数据分析学习笔记">Python 数据分析学习笔记</h1>
+
+<h2 id="一数据分析概述">一、数据分析概述</h2>
+<h3 id="1-数据分析定义">1. 数据分析定义</h3>
+<ul>
+  <li>从原始数据中抽取有价值信息的过程，是数据科学的重要组成部分。</li>
+  <li>核心：通过收集、处理、分析数据，提取洞察以支持决策。</li>
+</ul>
+
+<h3 id="2-数据分析师职责">2. 数据分析师职责</h3>
+<ul>
+  <li><strong>核心工作</strong>：监控数据、发现异常、分析原因、探索趋势。</li>
+  <li><strong>典型岗位</strong>：业务数据分析师（最常见）、数据治理、数据挖掘、数据产品经理等。</li>
+  <li><strong>职业发展</strong>：可晋升至管理岗（如数据分析经理）或技术岗（如数据挖掘工程师）。</li>
+</ul>
+
+<h3 id="3-技能要求">3. 技能要求</h3>
+<ul>
+  <li><strong>硬技能</strong>：Python/Excel、SQL、统计知识、数据可视化工具（如Tableau）。</li>
+  <li><strong>软技能</strong>：业务理解、沟通表达、逻辑分析。</li>
+</ul>
+
+<h3 id="4-数据分析流程">4. 数据分析流程</h3>
+<ol>
+  <li>确定目标：明确业务问题与指标。</li>
+  <li>数据获取：从数据库、API、文件等渠道获取数据。</li>
+  <li>数据清洗：处理缺失值、异常值、重复值。</li>
+  <li>数据分析：通过统计、建模等方法挖掘规律。</li>
+  <li>结果呈现：用图表、报告展示洞察。</li>
+</ol>
+
+<h2 id="二环境准备">二、环境准备</h2>
+<h3 id="1-anaconda-安装与使用">1. Anaconda 安装与使用</h3>
+<ul>
+  <li><strong>优势</strong>：集成Python环境及200+数据科学库（如NumPy、Pandas）。</li>
+  <li><strong>安装</strong>：从官网下载对应系统的安装包，按默认配置安装。</li>
+  <li><strong>虚拟环境</strong>：用<code class="language-plaintext highlighter-rouge">conda create --name venv python=3.8</code>创建环境，<code class="language-plaintext highlighter-rouge">conda activate venv</code>激活。</li>
+</ul>
+
+<h3 id="2-jupyterlab-入门">2. JupyterLab 入门</h3>
+<ul>
+  <li><strong>启动</strong>：命令行输入<code class="language-plaintext highlighter-rouge">jupyter lab</code>，支持浏览器内交互式编程。</li>
+  <li><strong>常用技巧</strong>：
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Tab</code>键代码补全，<code class="language-plaintext highlighter-rouge">?</code>查看对象帮助。</li>
+      <li>魔法指令：<code class="language-plaintext highlighter-rouge">%timeit</code>测试代码耗时，<code class="language-plaintext highlighter-rouge">%matplotlib inline</code>嵌入图表。</li>
+      <li>快捷键：<code class="language-plaintext highlighter-rouge">Shift+Enter</code>运行单元格并选中下一行。</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="三numpy-基础">三、NumPy 基础</h2>
+<h3 id="1-核心数据结构ndarray">1. 核心数据结构：ndarray</h3>
+<ul>
+  <li><strong>特点</strong>：多维数组，支持高效批量运算，性能远超Python列表。</li>
+  <li><strong>创建方式</strong>：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>                  <span class="c1"># 一维数组
+</span><span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>            <span class="c1"># 二维数组
+</span><span class="n">arr3</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>                   <span class="c1"># 生成0-10（步长2）的数组
+</span><span class="n">arr4</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>                  <span class="c1"># 生成0-1之间5个等距数
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="2-数组运算">2. 数组运算</h3>
+<ul>
+  <li><strong>矢量化操作</strong>：直接对数组执行加减乘除，无需循环。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">arr</span> <span class="o">+</span> <span class="mi">1</span>   <span class="c1"># 结果：array([2, 3, 4])
+</span><span class="n">arr</span> <span class="o">*</span> <span class="mi">2</span>   <span class="c1"># 结果：array([2, 4, 6])
+</span></code></pre></div>    </div>
+  </li>
+  <li><strong>广播机制</strong>：不同形状数组自动对齐运算（如<code class="language-plaintext highlighter-rouge">(4,3)</code>数组与<code class="language-plaintext highlighter-rouge">(3,)</code>数组相加）。</li>
+</ul>
+
+<h3 id="3-索引与切片">3. 索引与切片</h3>
+<ul>
+  <li><strong>普通索引</strong>：<code class="language-plaintext highlighter-rouge">arr[0]</code>取第一个元素，<code class="language-plaintext highlighter-rouge">arr[1, 2]</code>取二维数组第1行第2列。</li>
+  <li><strong>切片索引</strong>：<code class="language-plaintext highlighter-rouge">arr[1:3]</code>取第1到2个元素，<code class="language-plaintext highlighter-rouge">arr[:, 0]</code>取所有行第0列。</li>
+  <li><strong>布尔索引</strong>：<code class="language-plaintext highlighter-rouge">arr[arr &gt; 5]</code>筛选大于5的元素。</li>
+</ul>
+
+<h3 id="4-统计与线性代数">4. 统计与线性代数</h3>
+<ul>
+  <li><strong>描述统计</strong>：<code class="language-plaintext highlighter-rouge">arr.mean()</code>均值，<code class="language-plaintext highlighter-rouge">arr.std()</code>标准差，<code class="language-plaintext highlighter-rouge">np.median(arr)</code>中位数。</li>
+  <li><strong>线性代数</strong>：<code class="language-plaintext highlighter-rouge">np.dot(arr1, arr2)</code>矩阵点积，<code class="language-plaintext highlighter-rouge">np.linalg.inv(arr)</code>求逆矩阵。</li>
+</ul>
+
+<h2 id="四pandas-核心">四、Pandas 核心</h2>
+<h3 id="1-数据结构">1. 数据结构</h3>
+<ul>
+  <li><strong>Series</strong>：一维带索引数组，类似字典。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">Q1</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Q2</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Q3</span><span class="sh">'</span><span class="p">])</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>DataFrame</strong>：二维表格，每列可存不同类型数据。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">({</span>
+    <span class="sh">'</span><span class="s">姓名</span><span class="sh">'</span><span class="p">:</span> <span class="p">[</span><span class="sh">'</span><span class="s">张三</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">李四</span><span class="sh">'</span><span class="p">],</span>
+    <span class="sh">'</span><span class="s">年龄</span><span class="sh">'</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="p">})</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="2-数据处理">2. 数据处理</h3>
+<ul>
+  <li><strong>数据清洗</strong>：
+    <ul>
+      <li>缺失值：<code class="language-plaintext highlighter-rouge">df.dropna()</code>删除含空值行，<code class="language-plaintext highlighter-rouge">df.fillna(0)</code>用0填充。</li>
+      <li>重复值：<code class="language-plaintext highlighter-rouge">df.duplicated()</code>检测重复，<code class="language-plaintext highlighter-rouge">df.drop_duplicates()</code>删除重复。</li>
+    </ul>
+  </li>
+  <li><strong>数据转换</strong>：
+    <ul>
+      <li>类型转换：<code class="language-plaintext highlighter-rouge">df['年龄'].astype(int)</code>。</li>
+      <li>分箱处理：<code class="language-plaintext highlighter-rouge">pd.cut(df['工资'], bins=[0, 5000, 10000], labels=['低', '中高'])</code>。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3-数据分析">3. 数据分析</h3>
+<ul>
+  <li><strong>分组聚合</strong>：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 按部门分组求平均工资
+</span><span class="n">df</span><span class="p">.</span><span class="nf">groupby</span><span class="p">(</span><span class="sh">'</span><span class="s">部门</span><span class="sh">'</span><span class="p">)[</span><span class="sh">'</span><span class="s">工资</span><span class="sh">'</span><span class="p">].</span><span class="nf">mean</span><span class="p">()</span>
+  
+<span class="c1"># 多分组聚合
+</span><span class="n">df</span><span class="p">.</span><span class="nf">groupby</span><span class="p">([</span><span class="sh">'</span><span class="s">部门</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">性别</span><span class="sh">'</span><span class="p">])[</span><span class="sh">'</span><span class="s">工资</span><span class="sh">'</span><span class="p">].</span><span class="nf">agg</span><span class="p">([</span><span class="sh">'</span><span class="s">mean</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">max</span><span class="sh">'</span><span class="p">])</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>透视表</strong>：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 按地区和月份统计销售额
+</span><span class="n">pd</span><span class="p">.</span><span class="nf">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="sh">'</span><span class="s">地区</span><span class="sh">'</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="sh">'</span><span class="s">月份</span><span class="sh">'</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="sh">'</span><span class="s">销售额</span><span class="sh">'</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="sh">'</span><span class="s">sum</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="4-数据可视化">4. 数据可视化</h3>
+<ul>
+  <li>直接调用<code class="language-plaintext highlighter-rouge">plot</code>方法：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">销售额</span><span class="sh">'</span><span class="p">].</span><span class="nf">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="sh">'</span><span class="s">bar</span><span class="sh">'</span><span class="p">)</span>  <span class="c1"># 柱状图
+</span><span class="n">df</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="sh">'</span><span class="s">line</span><span class="sh">'</span><span class="p">)</span>          <span class="c1"># 折线图
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="五数据可视化">五、数据可视化</h2>
+<h3 id="1-matplotlib-基础">1. Matplotlib 基础</h3>
+<ul>
+  <li><strong>绘制图表</strong>：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>  <span class="c1"># 折线图
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">scatter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>  <span class="c1"># 散点图
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">bar</span><span class="p">([</span><span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">C</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>  <span class="c1"># 柱状图
+</span></code></pre></div>    </div>
+  </li>
+  <li><strong>图表美化</strong>：
+    <ul>
+      <li>添加标题：<code class="language-plaintext highlighter-rouge">plt.title('销售数据')</code>。</li>
+      <li>调整坐标轴：<code class="language-plaintext highlighter-rouge">plt.xlabel('月份'), plt.ylabel('销售额')</code>。</li>
+      <li>显示中文：<code class="language-plaintext highlighter-rouge">plt.rcParams['font.sans-serif'] = ['SimHei']</code>。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-seaborn-进阶">2. Seaborn 进阶</h3>
+<ul>
+  <li><strong>优势</strong>：基于Matplotlib，更简洁的统计图表接口。</li>
+  <li><strong>示例</strong>：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="c1"># 绘制鸢尾花数据分布图
+</span><span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="p">.</span><span class="nf">load_dataset</span><span class="p">(</span><span class="sh">'</span><span class="s">iris</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">sns</span><span class="p">.</span><span class="nf">pairplot</span><span class="p">(</span><span class="n">iris</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="sh">'</span><span class="s">species</span><span class="sh">'</span><span class="p">)</span>  <span class="c1"># 多变量关系图
+</span><span class="n">sns</span><span class="p">.</span><span class="nf">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="sh">'</span><span class="s">species</span><span class="sh">'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="sh">'</span><span class="s">petal_length</span><span class="sh">'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">iris</span><span class="p">)</span>  <span class="c1"># 箱线图
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="3-pyecharts-交互图表">3. Pyecharts 交互图表</h3>
+<ul>
+  <li><strong>特点</strong>：生成可交互的HTML图表，支持缩放、悬停查看详情。</li>
+  <li><strong>示例</strong>：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pyecharts.charts</span> <span class="kn">import</span> <span class="n">Bar</span>
+<span class="n">bar</span> <span class="o">=</span> <span class="nc">Bar</span><span class="p">()</span>
+<span class="n">bar</span><span class="p">.</span><span class="nf">add_xaxis</span><span class="p">([</span><span class="sh">'</span><span class="s">A</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">B</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">C</span><span class="sh">'</span><span class="p">])</span>
+<span class="n">bar</span><span class="p">.</span><span class="nf">add_yaxis</span><span class="p">(</span><span class="sh">'</span><span class="s">数据</span><span class="sh">'</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<span class="n">bar</span><span class="p">.</span><span class="nf">set_global_opts</span><span class="p">(</span><span class="n">title_opts</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">text</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">交互式柱状图</span><span class="sh">'</span><span class="p">})</span>
+<span class="n">bar</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="sh">'</span><span class="s">bar_chart.html</span><span class="sh">'</span><span class="p">)</span>  <span class="c1"># 生成HTML文件
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+  </div><a class="u-url" href="/blog/python/2021/08/20/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"></h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name"></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

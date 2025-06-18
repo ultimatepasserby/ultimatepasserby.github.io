@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Cpp学习笔记</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Cpp学习笔记" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="C++ 学习笔记" />
+<meta property="og:description" content="C++ 学习笔记" />
+<link rel="canonical" href="http://localhost:4000/blog/c++/2025/06/03/Cpp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" />
+<meta property="og:url" content="http://localhost:4000/blog/c++/2025/06/03/Cpp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-06-03T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Cpp学习笔记" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-03T00:00:00+08:00","datePublished":"2025-06-03T00:00:00+08:00","description":"C++ 学习笔记","headline":"Cpp学习笔记","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/c++/2025/06/03/Cpp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"},"url":"http://localhost:4000/blog/c++/2025/06/03/Cpp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" /></head>
+<body><a href="/" class="home-link">返回简历主页</a>
+<!-- 确保自定义样式被加载 -->
+<link rel="stylesheet" href="/blog/assets/css/main.scss"><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Cpp学习笔记</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-06-03T00:00:00+08:00" itemprop="datePublished">Jun 3, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="c-学习笔记">C++ 学习笔记</h1>
+
+<h2 id="一基础语法">一、基础语法</h2>
+<p>基础语法是学习 C++ 的基石，它包括变量、数据类型、控制结构等基本元素。</p>
+
+<h3 id="知识点">知识点</h3>
+<ol>
+  <li><strong>数据类型</strong>
+    <ul>
+      <li><strong>基本数据类型</strong>：如 <code class="language-plaintext highlighter-rouge">int</code>（整数类型）、<code class="language-plaintext highlighter-rouge">float</code>（单精度浮点类型）、<code class="language-plaintext highlighter-rouge">double</code>（双精度浮点类型）、<code class="language-plaintext highlighter-rouge">char</code>（字符类型）、<code class="language-plaintext highlighter-rouge">bool</code>（布尔类型）等。</li>
+      <li><strong>复合数据类型</strong>：数组、结构体、枚举等。例如，数组可以存储相同类型的多个元素，结构体可以将不同类型的数据组合在一起。</li>
+    </ul>
+  </li>
+  <li><strong>变量声明与初始化</strong>
+    <ul>
+      <li>声明变量时需要指定数据类型，如 <code class="language-plaintext highlighter-rouge">int num;</code> 声明了一个整数变量 <code class="language-plaintext highlighter-rouge">num</code>。</li>
+      <li>初始化可以在声明时进行，如 <code class="language-plaintext highlighter-rouge">int num = 10;</code>，也可以使用构造函数初始化，如 <code class="language-plaintext highlighter-rouge">std::string str("Hello");</code>。</li>
+    </ul>
+  </li>
+  <li><strong>控制结构</strong>
+    <ul>
+      <li><strong>条件语句</strong>：<code class="language-plaintext highlighter-rouge">if-else</code> 用于根据条件执行不同的代码块，<code class="language-plaintext highlighter-rouge">switch</code> 用于多分支选择。</li>
+      <li><strong>循环语句</strong>：<code class="language-plaintext highlighter-rouge">for</code> 循环适用于已知循环次数的情况，<code class="language-plaintext highlighter-rouge">while</code> 循环和 <code class="language-plaintext highlighter-rouge">do-while</code> 循环适用于未知循环次数的情况。</li>
+    </ul>
+  </li>
+  <li><strong>函数</strong>
+    <ul>
+      <li>函数的定义包括返回类型、函数名、参数列表和函数体。例如：
+        <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+      <li>函数调用时需要传递相应的参数，如 <code class="language-plaintext highlighter-rouge">int result = add(3, 5);</code>。</li>
+      <li>函数还支持默认参数、函数重载等特性。</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="案例">案例</h3>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span>
+<span class="c1">// 结构体定义</span>
+<span class="k">struct</span> <span class="nc">Person</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// 函数定义，使用默认参数</span>
+<span class="kt">void</span> <span class="nf">printPerson</span><span class="p">(</span><span class="k">const</span> <span class="n">Person</span><span class="o">&amp;</span> <span class="n">p</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">printAge</span> <span class="o">=</span> <span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Name: "</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">printAge</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">", Age: "</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="p">.</span><span class="n">age</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 变量声明与初始化</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">3.14f</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">isTrue</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+    <span class="c1">// 数组初始化</span>
+    <span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+
+    <span class="c1">// 结构体初始化</span>
+    <span class="n">Person</span> <span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s">"John"</span><span class="p">,</span> <span class="mi">25</span><span class="p">};</span>
+
+    <span class="c1">// 函数调用</span>
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">y</span><span class="p">));</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Add result: "</span> <span class="o">&lt;&lt;</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">printPerson</span><span class="p">(</span><span class="n">person</span><span class="p">);</span>
+    <span class="n">printPerson</span><span class="p">(</span><span class="n">person</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+
+    <span class="c1">// 控制结构示例</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isTrue</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"It's true!"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Array element: "</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="二异常处理">二、异常处理</h2>
+<p>异常处理机制允许程序在运行时处理错误情况，避免程序崩溃。</p>
+
+<h3 id="知识点-1">知识点</h3>
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">try-catch</code> 块</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">try</code> 块中包含可能抛出异常的代码，<code class="language-plaintext highlighter-rouge">catch</code> 块用于捕获和处理异常。可以有多个 <code class="language-plaintext highlighter-rouge">catch</code> 块，分别处理不同类型的异常。</li>
+    </ul>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">throw</code> 语句</strong>
+    <ul>
+      <li>用于抛出异常，可以抛出内置类型或自定义异常类型。例如：<code class="language-plaintext highlighter-rouge">throw std::runtime_error("Something went wrong!");</code></li>
+    </ul>
+  </li>
+  <li><strong>标准异常类</strong>
+    <ul>
+      <li>C++ 标准库提供了一系列异常类，如 <code class="language-plaintext highlighter-rouge">std::exception</code> 是所有标准异常类的基类，<code class="language-plaintext highlighter-rouge">std::runtime_error</code> 用于表示运行时错误，<code class="language-plaintext highlighter-rouge">std::logic_error</code> 用于表示逻辑错误等。</li>
+    </ul>
+  </li>
+  <li><strong>自定义异常类</strong>
+    <ul>
+      <li>可以通过继承 <code class="language-plaintext highlighter-rouge">std::exception</code> 类来创建自定义异常类，并重写 <code class="language-plaintext highlighter-rouge">what()</code> 方法。</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="案例-1">案例</h3>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp">
+</span>
+<span class="c1">// 自定义异常类</span>
+<span class="k">class</span> <span class="nc">DivideByZeroException</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">what</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="k">override</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"Division by zero!"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">double</span> <span class="nf">divide</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 抛出自定义异常</span>
+        <span class="k">throw</span> <span class="n">DivideByZeroException</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">result</span> <span class="o">=</span> <span class="n">divide</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"The result is: "</span> <span class="o">&lt;&lt;</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">DivideByZeroException</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 捕获自定义异常</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">"Exception caught: "</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 捕获其他标准异常</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">"Generic exception caught: "</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="三线程管理">三、线程管理</h2>
+<p>C++11 引入了标准线程库，允许程序创建和管理多个线程。</p>
+
+<h3 id="知识点-2">知识点</h3>
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">std::thread</code> 类</strong>
+    <ul>
+      <li>用于创建和管理线程，可以通过构造函数传递可调用对象（函数、函数对象、Lambda 表达式等）和参数来创建线程。</li>
+    </ul>
+  </li>
+  <li><strong>线程的创建和启动</strong>
+    <ul>
+      <li>例如：<code class="language-plaintext highlighter-rouge">std::thread t(func, args...);</code>，线程创建后会立即启动执行。</li>
+    </ul>
+  </li>
+  <li><strong>线程的等待和分离</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">t.join()</code> 会阻塞当前线程，直到被等待的线程执行结束。</li>
+      <li><code class="language-plaintext highlighter-rouge">t.detach()</code> 会使线程在后台独立运行，当前线程将失去对该线程的直接控制权。</li>
+    </ul>
+  </li>
+  <li><strong>线程生命周期管理</strong>
+    <ul>
+      <li>需要确保对线程对象调用 <code class="language-plaintext highlighter-rouge">join</code> 或 <code class="language-plaintext highlighter-rouge">detach</code> 方法，否则在线程对象析构时会触发 <code class="language-plaintext highlighter-rouge">std::terminate</code> 函数，导致程序异常终止。可以使用 RAII 技术来管理线程资源。</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="案例-2">案例</h3>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp">
+</span>
+<span class="c1">// RAII 类用于管理线程资源</span>
+<span class="k">class</span> <span class="nc">ThreadGuard</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="k">explicit</span> <span class="n">ThreadGuard</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kr">thread</span><span class="o">&amp;</span> <span class="n">t</span><span class="p">)</span> <span class="o">:</span> <span class="n">t_</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="o">~</span><span class="n">ThreadGuard</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">t_</span><span class="p">.</span><span class="n">joinable</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">t_</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">ThreadGuard</span><span class="p">(</span><span class="k">const</span> <span class="n">ThreadGuard</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+    <span class="n">ThreadGuard</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">ThreadGuard</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span><span class="o">&amp;</span> <span class="n">t_</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">hello</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hello from thread!"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">throwException</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">"Exception in thread!"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 创建并启动线程</span>
+    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t</span><span class="p">(</span><span class="n">hello</span><span class="p">);</span>
+    <span class="n">ThreadGuard</span> <span class="n">guard</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t2</span><span class="p">(</span><span class="n">throwException</span><span class="p">);</span>
+        <span class="n">ThreadGuard</span> <span class="n">guard2</span><span class="p">(</span><span class="n">t2</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">"Exception caught: "</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hello from main!"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="四同步机制">四、同步机制</h2>
+<p>同步机制用于协调多个线程的执行，避免数据竞争和不一致性。</p>
+
+<h3 id="知识点-3">知识点</h3>
+<ol>
+  <li><strong>互斥锁（<code class="language-plaintext highlighter-rouge">std::mutex</code>）</strong>
+    <ul>
+      <li>用于保护共享资源，确保同一时间只有一个线程可以访问。<code class="language-plaintext highlighter-rouge">std::mutex</code> 是最基本的互斥量，<code class="language-plaintext highlighter-rouge">std::recursive_mutex</code> 允许同一个线程多次获取该锁。</li>
+    </ul>
+  </li>
+  <li><strong>锁的获取和释放</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">std::lock_guard</code> 构造时自动加锁，析构时自动解锁，不支持手动释放锁。</li>
+      <li><code class="language-plaintext highlighter-rouge">std::unique_lock</code> 比 <code class="language-plaintext highlighter-rouge">std::lock_guard</code> 更灵活，支持延迟加锁、手动解锁，还可以与条件变量配合使用。</li>
+      <li><code class="language-plaintext highlighter-rouge">std::scoped_lock</code>（C++17）支持一次性获取多个锁，避免死锁问题。</li>
+    </ul>
+  </li>
+  <li><strong>条件变量（<code class="language-plaintext highlighter-rouge">std::condition_variable</code>）</strong>
+    <ul>
+      <li>用于线程间的事件通知，通常与 <code class="language-plaintext highlighter-rouge">std::unique_lock</code> 配合使用。需要使用谓词循环检查来避免虚假唤醒。</li>
+    </ul>
+  </li>
+  <li><strong>避免死锁</strong>
+    <ul>
+      <li>可以通过固定锁获取顺序、使用 <code class="language-plaintext highlighter-rouge">std::lock</code> 或 <code class="language-plaintext highlighter-rouge">std::scoped_lock</code>、避免持锁时调用用户代码等方法来避免死锁。</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="案例-3">案例</h3>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;mutex&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;condition_variable&gt;</span><span class="cp">
+</span>
+<span class="n">std</span><span class="o">::</span><span class="n">mutex</span> <span class="n">mtx</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">condition_variable</span> <span class="n">cv</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">shared_variable</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="n">ready</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">increment</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100000</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 自动获取和释放锁</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">mtx</span><span class="p">);</span>
+        <span class="o">++</span><span class="n">shared_variable</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">mtx</span><span class="p">);</span>
+        <span class="n">ready</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cv</span><span class="p">.</span><span class="n">notify_one</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">waitForReady</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lk</span><span class="p">(</span><span class="n">mtx</span><span class="p">);</span>
+    <span class="n">cv</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">lk</span><span class="p">,</span> <span class="p">[]{</span> <span class="k">return</span> <span class="n">ready</span><span class="p">;</span> <span class="p">});</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Shared variable: "</span> <span class="o">&lt;&lt;</span> <span class="n">shared_variable</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t1</span><span class="p">(</span><span class="n">increment</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t2</span><span class="p">(</span><span class="n">waitForReady</span><span class="p">);</span>
+
+    <span class="n">t1</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+    <span class="n">t2</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="五高级工具">五、高级工具</h2>
+<p>高级工具提供了更强大和灵活的编程能力，如智能指针和函数对象。</p>
+
+<h3 id="知识点-4">知识点</h3>
+<ol>
+  <li><strong>智能指针</strong>
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">std::unique_ptr</code></strong>：独占所有权的智能指针，同一时间只能有一个 <code class="language-plaintext highlighter-rouge">std::unique_ptr</code> 指向同一个对象。</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">std::shared_ptr</code></strong>：共享所有权的智能指针，多个 <code class="language-plaintext highlighter-rouge">std::shared_ptr</code> 可以指向同一个对象，通过引用计数来管理对象的生命周期。</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">std::weak_ptr</code></strong>：弱引用智能指针，用于解决 <code class="language-plaintext highlighter-rouge">std::shared_ptr</code> 的循环引用问题，它不增加引用计数。</li>
+    </ul>
+  </li>
+  <li><strong>函数对象（<code class="language-plaintext highlighter-rouge">std::function</code>）</strong>
+    <ul>
+      <li>可以存储、复制和调用任何可调用对象，如函数、函数指针、函数对象、Lambda 表达式等。</li>
+    </ul>
+  </li>
+  <li><strong>lambda 表达式</strong>
+    <ul>
+      <li>一种匿名函数，用于创建简洁的函数对象。可以捕获外部变量，分为值捕获和引用捕获。</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="案例-4">案例</h3>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
+</span>
+<span class="c1">// 函数对象类</span>
+<span class="k">class</span> <span class="nc">Adder</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="k">operator</span><span class="p">()(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 智能指针</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">uniquePtr</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Unique pointer value: "</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">uniquePtr</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sharedPtr1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sharedPtr2</span> <span class="o">=</span> <span class="n">sharedPtr1</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Shared pointer use count: "</span> <span class="o">&lt;&lt;</span> <span class="n">sharedPtr1</span><span class="p">.</span><span class="n">use_count</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">weak_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">weakPtr</span> <span class="o">=</span> <span class="n">sharedPtr1</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">lockedPtr</span> <span class="o">=</span> <span class="n">weakPtr</span><span class="p">.</span><span class="n">lock</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Weak pointer value: "</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">lockedPtr</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 函数对象</span>
+    <span class="n">Adder</span> <span class="n">adder</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">func</span> <span class="o">=</span> <span class="n">adder</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Function object result: "</span> <span class="o">&lt;&lt;</span> <span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">// lambda 表达式</span>
+    <span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span> <span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Lambda result: "</span> <span class="o">&lt;&lt;</span> <span class="n">lambda</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">captureLambda</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="p">](</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">value</span><span class="p">;</span> <span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Captured lambda result: "</span> <span class="o">&lt;&lt;</span> <span class="n">captureLambda</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="六原子操作">六、原子操作</h2>
+<p>原子操作是不可分割的操作，用于在多线程环境中实现无锁编程。</p>
+
+<h3 id="知识点-5">知识点</h3>
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">std::atomic</code> 模板类</strong>
+    <ul>
+      <li>用于创建原子类型，如 <code class="language-plaintext highlighter-rouge">std::atomic&lt;int&gt;</code>、<code class="language-plaintext highlighter-rouge">std::atomic&lt;bool&gt;</code> 等。</li>
+    </ul>
+  </li>
+  <li><strong>原子操作</strong>
+    <ul>
+      <li>如 <code class="language-plaintext highlighter-rouge">load()</code> 用于读取原子变量的值，<code class="language-plaintext highlighter-rouge">store()</code> 用于写入原子变量的值，<code class="language-plaintext highlighter-rouge">fetch_add()</code> 用于原子地增加变量的值等。</li>
+    </ul>
+  </li>
+  <li><strong>内存顺序（Memory Order）</strong>
+    <ul>
+      <li>包括 <code class="language-plaintext highlighter-rouge">std::memory_order_relaxed</code>（仅保证原子性，没有顺序约束）、<code class="language-plaintext highlighter-rouge">std::memory_order_acquire</code>（读屏障）、<code class="language-plaintext highlighter-rouge">std::memory_order_release</code>（写屏障）、<code class="language-plaintext highlighter-rouge">std::memory_order_seq_cst</code>（顺序一致性，默认内存序）等。</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="案例-5">案例</h3>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;atomic&gt;</span><span class="cp">
+</span>
+<span class="n">std</span><span class="o">::</span><span class="n">atomic</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">atomic_variable</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">atomic_increment</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100000</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">atomic_variable</span><span class="p">.</span><span class="n">fetch_add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">memory_order_relaxed</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t1</span><span class="p">(</span><span class="n">atomic_increment</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t2</span><span class="p">(</span><span class="n">atomic_increment</span><span class="p">);</span>
+
+    <span class="n">t1</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+    <span class="n">t2</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Atomic variable: "</span> <span class="o">&lt;&lt;</span> <span class="n">atomic_variable</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="七并发结构">七、并发结构</h2>
+<p>并发结构是为多线程环境设计的数据结构，提供高效的并发访问。</p>
+
+<h3 id="知识点-6">知识点</h3>
+<ol>
+  <li><strong>并发队列（<code class="language-plaintext highlighter-rouge">std::queue</code> + 同步机制）</strong>
+    <ul>
+      <li>用于线程间的数据传递，需要使用互斥锁和条件变量来保证线程安全。</li>
+    </ul>
+  </li>
+  <li><strong>并发哈希表</strong>
+    <ul>
+      <li>提供高效的并发查找和插入操作，可以使用细粒度锁或无锁算法来实现。</li>
+    </ul>
+  </li>
+  <li><strong>基于锁的并发数据结构设计</strong>
+    <ul>
+      <li>如线程安全的栈、队列等，需要使用互斥锁来保护共享数据。</li>
+    </ul>
+  </li>
+  <li><strong>无锁设计</strong>
+    <ul>
+      <li>如使用 CAS（Compare-And-Swap）操作实现无锁数据结构，避免锁带来的开销。</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="案例-6">案例</h3>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;queue&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;mutex&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;condition_variable&gt;</span><span class="cp">
+</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">&gt;</span>
+<span class="k">class</span> <span class="nc">ConcurrentQueue</span> <span class="p">{</span>
+<span class="nl">private:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queue_</span><span class="p">;</span>
+    <span class="k">mutable</span> <span class="n">std</span><span class="o">::</span><span class="n">mutex</span> <span class="n">mtx_</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">condition_variable</span> <span class="n">cond_var_</span><span class="p">;</span>
+
+<span class="nl">public:</span>
+    <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">mtx_</span><span class="p">);</span>
+        <span class="n">queue_</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+        <span class="n">cond_var_</span><span class="p">.</span><span class="n">notify_one</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="n">T</span> <span class="nf">pop</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">mtx_</span><span class="p">);</span>
+        <span class="n">cond_var_</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">lock</span><span class="p">,</span> <span class="p">[</span><span class="k">this</span><span class="p">]</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!</span><span class="n">queue_</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span> <span class="p">});</span>
+        <span class="n">T</span> <span class="n">value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">queue_</span><span class="p">.</span><span class="n">front</span><span class="p">());</span>
+        <span class="n">queue_</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">value</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">ConcurrentQueue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">queue</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">producer</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">consumer</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Consumed: "</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t1</span><span class="p">(</span><span class="n">producer</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t2</span><span class="p">(</span><span class="n">consumer</span><span class="p">);</span>
+
+    <span class="n">t1</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+    <span class="n">t2</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="八实战优化">八、实战优化</h2>
+<p>实战优化涉及到如何在实际项目中应用上述知识，提高程序的性能和可靠性。</p>
+
+<h3 id="知识点-7">知识点</h3>
+<ol>
+  <li><strong>性能分析</strong>
+    <ul>
+      <li>使用工具如 <code class="language-plaintext highlighter-rouge">gprof</code>、<code class="language-plaintext highlighter-rouge">valgrind</code> 等分析程序的性能瓶颈，找出耗时的函数和内存泄漏问题。</li>
+    </ul>
+  </li>
+  <li><strong>并发算法优化</strong>
+    <ul>
+      <li>如并行排序、并行搜索等，可以使用 C++17 引入的并行算法库来实现。</li>
+    </ul>
+  </li>
+  <li><strong>内存管理优化</strong>
+    <ul>
+      <li>合理使用智能指针和内存池，避免频繁的内存分配和释放带来的开销。</li>
+    </ul>
+  </li>
+  <li><strong>线程池与工作窃取</strong>
+    <ul>
+      <li>线程池可以避免频繁创建和销毁线程的开销，提高性能。工作窃取算法可以提高线程的利用率。</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="案例-7">案例</h3>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;numeric&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;execution&gt;</span><span class="cp">
+</span>
+<span class="c1">// 并行求和函数</span>
+<span class="kt">int</span> <span class="nf">parallel_sum</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">reduce</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">execution</span><span class="o">::</span><span class="n">par</span><span class="p">,</span> <span class="n">data</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">data</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">(</span><span class="mi">1000000</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">iota</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">data</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">parallel_sum</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Sum: "</span> <span class="o">&lt;&lt;</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+  </div><a class="u-url" href="/blog/c++/2025/06/03/Cpp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"></h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name"></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

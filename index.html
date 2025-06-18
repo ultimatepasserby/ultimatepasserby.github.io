@@ -1,30 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>我的个人空间</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; }
-        .card {
-            border: 1px solid #ddd; padding: 20px; margin: 20px 0;
-            border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>郭世豪的简历 Resume</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+    .photo {
+      flex-shrink: 0;
+      width: 160px;
+      height: 224px;
+      margin-right: 30px;
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .info h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .info p {
+      margin: 4px 0;
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 6px;
+      margin-top: 30px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .label {
+      font-weight: bold;
+    }
+    .lang-toggle {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    .lang-toggle button {
+      padding: 6px 12px;
+      margin-left: 10px;
+      border: none;
+      background-color: #2c3e50;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function toggleLanguage(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+      });
+    }
+  </script>
 </head>
-<body>
-    <h1>欢迎访问我的个人空间</h1>
-
-    <div class="card">
-        <h2>📄 我的简历</h2>
-        <p><a href="/resume/">查看在线简历</a></p>
+<body onload="toggleLanguage('zh')">
+  <div class="container">
+    <div class="lang-toggle">
+      <button onclick="toggleLanguage('zh')">中文</button>
+      <button onclick="toggleLanguage('en')">English</button>
+    </div>
+    <div class="header">
+      <div class="photo">
+        <img src="my_photo.jpg" alt="个人照片">
+      </div>
+      <div class="info">
+        <h1>郭世豪 Guo Shihao</h1>
+        <p><span class="label">电话 / Phone:</span> +86 15998465510</p>
+        <p><span class="label">邮箱 / Email:</span> ultimatepasserby@gmail.com</p>
+        <p><span class="label">地址 / Location:</span> 大连市沙河口区 / Shahekou, Dalian, China</p>
+      </div>
     </div>
 
-    <div class="card">
-        <h2>📚 学习笔记</h2>
-        <p><a href="/docs/">查看学习笔记</a></p>
+    <div data-lang="zh">
+      <h2>教育背景与工作经历</h2>
+      <ul>
+        <li>2015-2020 本科：江苏大学 通信工程</li>
+        <li>2020-2021 技术员：旅顺星光机械厂</li>
+        <li>2021-2025 研究生：大连海洋大学 计算机技术</li>
+        <li>2024-2025 留学生：长崎大学 情报工学</li>
+      </ul>
+    
+      <h2>专业证书</h2>
+      <ul>
+        <li>CET6 全国大学英语六级考试 496</li>
+        <li>TOEIC(L&R) 托业英语考试（听读）745</li>
+        <li>JLPT N2 日本语能力测试 N2 合格</li>
+        <li>NCRE 全国计算机二级考试（C语言）合格</li>
+        <li>中国机动车驾驶证 C1（手动挡）</li>
+        <li>日本机动车驾驶证 AT（自动档）</li>
+      </ul>
+
+      <h2>专业技能</h2>
+      <ul>
+        <li><strong>计算机语言/系统相关：</strong>熟悉 Python、C；掌握 Linux 命令、Shell 脚本、服务器连接、MySQL/SQLite 数据库开发；了解 C++、C#、Java、.NET、HTML5、CSS、Vue.js、Matlab 等。</li>
+        <li><strong>深度学习相关：</strong>熟悉 Numpy、Pandas、Matplotlib；掌握 Pytorch、Tensorflow，能进行图像处理（分割、识别、追踪、OCR等）；了解 CNN、ResNet、Yolo、Vision Transformer 等算法。</li>
+        <li><strong>工作经历相关：</strong>有海军出海设备维护经验，能维修无线电设备、网络故障、雷达、电话、卫星电视等。</li>
+      </ul>
+
+      <h2>项目经历</h2>
+      <ul>
+        <li><strong>2022.9-2023.3 大连天成电子有限公司：</strong>制作火车状态数据集，包括车厢、车门、车号等的分类与标注。</li>
+        <li><strong>2023.4-2025.3 洛央（大连）信息服务有限公司：</strong>
+          <ul>
+            <li>制作机动车牌照和单据数据集，标注姓名、电话、车牌号等。</li>
+            <li>参与南海鱼类数据集制作，逾百种鱼类的标注与检测方法设计。</li>
+          </ul>
+        </li>
+        <li><strong>2023 数交会展示：</strong>智能海洋平台系统开发，使用 Vue+HTML5+CSS 前端开发，Python 后端鱼群计数模块开发。</li>
+        <li><strong>2024（日本）：</strong>AR 音乐游戏项目，使用 BlazePose GHUM Holistic 进行手部关键点识别，参与谱面设计。</li>
+      </ul>
     </div>
 
-    <footer style="margin-top: 40px; color: #666;">
-        <p>© 2025 我的个人空间 - 使用 GitHub Pages 部署</p>
-    </footer>
+    <div data-lang="en" style="display: none;">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>M.E. in Electronic Information (Computer Technology)</strong><br>
+        Dalian Ocean University, China | Expected Jul 2025</li>
+        <li><strong>Exchange Program in Computer Engineering</strong><br>
+        Graduate School of Engineering, Nagasaki University, Japan | Mar 2024 - Feb 2025</li>
+        <li><strong>B.E. in Communication Engineering</strong><br>
+        Jiangsu University, China | Sep 2015 - Jun 2020</li>
+      </ul>
+
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Programming & Systems</strong>
+          <ul>
+            <li>Proficient: Python, C</li>
+            <li>Familiar: C++, C#, Java, .NET, HTML5, CSS, Vue.js, Matlab</li>
+            <li>OS & Tools: Linux (file operations, shell scripting, SSH), MySQL, SQLite, TCP/IP</li>
+          </ul>
+        </li>
+        <li><strong>Deep Learning & Computer Vision</strong>
+          <ul>
+            <li>Libraries: NumPy, pandas, matplotlib</li>
+            <li>Frameworks: PyTorch, TensorFlow</li>
+            <li>Capabilities: Image preprocessing, segmentation, individual recognition/tracking, density estimation, OCR</li>
+            <li>Algorithms: CNN, ResNet, YOLO, Vision Transformer</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>AR Music Game (Japan)</strong> | 2024
+          <ul>
+            <li>Developed hand skeletal tracking using Google BlazePose GHUM Holistic.</li>
+            <li>Designed beat maps for selected music tracks.</li>
+          </ul>
+        </li>
+        <li><strong>Smart Ocean Platform System</strong> | 2023, China Digital Trade Fair
+          <ul>
+            <li>Developed front-end UI using Vue, HTML5, CSS, and JavaScript; designed project logo.</li>
+            <li>Implemented back-end fish counting module using an optimized Vision Transformer model in Python.</li>
+          </ul>
+        </li>
+      </ul>
+      
+      <h2>Certifications</h2>
+      <ul>
+        <li>CET-6 (College English Test Band 6): 496</li>
+        <li>TOEIC (Listening & Reading): 745</li>
+        <li>JLPT N2 (Japanese Language Proficiency Test)</li>
+        <li>NCRE Level 2 (C Programming)</li>
+        <li>China Driver's License: Class C1 (manual)</li>
+        <li>Japan Driver's License: AT (automatic)</li>
+      </ul>
+    </div>
+  </div>
 </body>
+<a href="/blog" class="blog-link">查看我的学习笔记</a>
 </html>

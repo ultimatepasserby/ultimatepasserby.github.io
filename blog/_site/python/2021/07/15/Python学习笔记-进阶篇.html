@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Python学习笔记-进阶篇</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Python学习笔记-进阶篇" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Python 进阶应用笔记" />
+<meta property="og:description" content="Python 进阶应用笔记" />
+<link rel="canonical" href="http://localhost:4000/blog/python/2021/07/15/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%BF%9B%E9%98%B6%E7%AF%87.html" />
+<meta property="og:url" content="http://localhost:4000/blog/python/2021/07/15/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%BF%9B%E9%98%B6%E7%AF%87.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-15T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Python学习笔记-进阶篇" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-07-15T00:00:00+08:00","datePublished":"2021-07-15T00:00:00+08:00","description":"Python 进阶应用笔记","headline":"Python学习笔记-进阶篇","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/python/2021/07/15/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%BF%9B%E9%98%B6%E7%AF%87.html"},"url":"http://localhost:4000/blog/python/2021/07/15/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%BF%9B%E9%98%B6%E7%AF%87.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" /></head>
+<body><a href="/" class="home-link">返回简历主页</a>
+<!-- 确保自定义样式被加载 -->
+<link rel="stylesheet" href="/blog/assets/css/main.scss"><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python学习笔记-进阶篇</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-07-15T00:00:00+08:00" itemprop="datePublished">Jul 15, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="python-进阶应用笔记">Python 进阶应用笔记</h1>
+
+<h2 id="一文件操作与异常处理">一、文件操作与异常处理</h2>
+
+<h3 id="1-文件读写基础">1. 文件读写基础</h3>
+<ul>
+  <li><strong>文件打开与关闭</strong><br />
+使用 <code class="language-plaintext highlighter-rouge">open()</code> 函数打开文件，指定文件名、操作模式和编码，操作完成后用 <code class="language-plaintext highlighter-rouge">close()</code> 关闭。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">file</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">data.txt</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">r</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">content</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+<span class="nb">file</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div>    </div>
+    <ul>
+      <li><strong>操作模式</strong>：<code class="language-plaintext highlighter-rouge">'r'</code>（读）、<code class="language-plaintext highlighter-rouge">'w'</code>（写，覆盖）、<code class="language-plaintext highlighter-rouge">'a'</code>（追加）、<code class="language-plaintext highlighter-rouge">'b'</code>（二进制模式）。</li>
+      <li><strong>上下文管理器</strong>：用 <code class="language-plaintext highlighter-rouge">with</code> 自动关闭文件，更简洁。
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">data.txt</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">r</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>文本文件读写</strong>
+    <ul>
+      <li>读：<code class="language-plaintext highlighter-rouge">read()</code>（全文）、<code class="language-plaintext highlighter-rouge">readline()</code>（单行）、<code class="language-plaintext highlighter-rouge">readlines()</code>（逐行列表）。</li>
+      <li>写：<code class="language-plaintext highlighter-rouge">write()</code> 写入字符串，<code class="language-plaintext highlighter-rouge">writelines()</code> 写入列表。</li>
+    </ul>
+  </li>
+  <li><strong>二进制文件操作</strong><br />
+用于图片、视频等，模式加 <code class="language-plaintext highlighter-rouge">'b'</code>，读写字节数据。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">image.jpg</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">rb</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">,</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">copy.jpg</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">wb</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">src</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+    <span class="n">dst</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="2-异常处理机制">2. 异常处理机制</h3>
+<ul>
+  <li><strong>try-except-finally</strong><br />
+捕获异常并处理，<code class="language-plaintext highlighter-rouge">finally</code> 块始终执行（如关闭文件）。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="nb">file</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">nonexist.txt</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">r</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">FileNotFoundError</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">文件不存在</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">UnicodeDecodeError</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">编码错误</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">if</span> <span class="sh">'</span><span class="s">file</span><span class="sh">'</span> <span class="ow">in</span> <span class="nf">locals</span><span class="p">():</span>
+        <span class="nb">file</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>自定义异常</strong><br />
+继承 <code class="language-plaintext highlighter-rouge">Exception</code> 类，用于特定错误场景。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">InputError</span><span class="p">(</span><span class="nb">ValueError</span><span class="p">):</span>
+    <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">check_num</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nc">InputError</span><span class="p">(</span><span class="sh">'</span><span class="s">不能为负数</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="二数据序列化与csvexcel处理">二、数据序列化与CSV/Excel处理</h2>
+
+<h3 id="1-json序列化">1. JSON序列化</h3>
+<ul>
+  <li><strong>JSON与Python类型转换</strong>
+    <ul>
+      <li>Python <code class="language-plaintext highlighter-rouge">dict/list</code> → JSON <code class="language-plaintext highlighter-rouge">object/array</code></li>
+      <li>Python <code class="language-plaintext highlighter-rouge">str</code> → JSON <code class="language-plaintext highlighter-rouge">string</code>，<code class="language-plaintext highlighter-rouge">int/float</code> → <code class="language-plaintext highlighter-rouge">number</code>，<code class="language-plaintext highlighter-rouge">None</code> → <code class="language-plaintext highlighter-rouge">null</code>。</li>
+    </ul>
+  </li>
+  <li><strong>读写JSON文件</strong>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">json</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">张三</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+<span class="c1"># 写入
+</span><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">data.json</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">json</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">file</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>  <span class="c1"># ensure_ascii=False 保留中文
+# 读取
+</span><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">data.json</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">r</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="2-csv文件操作">2. CSV文件操作</h3>
+<ul>
+  <li><strong>读写CSV</strong><br />
+使用 <code class="language-plaintext highlighter-rouge">csv</code> 模块，适合表格数据。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">csv</span>
+<span class="c1"># 写入
+</span><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">scores.csv</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="sh">''</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">writer</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+    <span class="n">writer</span><span class="p">.</span><span class="nf">writerow</span><span class="p">([</span><span class="sh">'</span><span class="s">姓名</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">语文</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">数学</span><span class="sh">'</span><span class="p">])</span>
+    <span class="n">writer</span><span class="p">.</span><span class="nf">writerow</span><span class="p">([</span><span class="sh">'</span><span class="s">张三</span><span class="sh">'</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">85</span><span class="p">])</span>
+<span class="c1"># 读取
+</span><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">scores.csv</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">r</span><span class="sh">'</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="sh">''</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">reader</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="3-excel文件处理">3. Excel文件处理</h3>
+<ul>
+  <li><strong>旧格式(.xls)操作</strong>
+    <ul>
+      <li>读：<code class="language-plaintext highlighter-rouge">xlrd</code> 模块，<code class="language-plaintext highlighter-rouge">open_workbook()</code> 打开，<code class="language-plaintext highlighter-rouge">sheet_by_name()</code> 获取工作表。</li>
+      <li>写：<code class="language-plaintext highlighter-rouge">xlwt</code> 模块，<code class="language-plaintext highlighter-rouge">Workbook()</code> 创建，<code class="language-plaintext highlighter-rouge">add_sheet()</code> 添加表，<code class="language-plaintext highlighter-rouge">write()</code> 写入数据。</li>
+    </ul>
+  </li>
+  <li><strong>新格式(.xlsx)操作</strong><br />
+使用 <code class="language-plaintext highlighter-rouge">openpyxl</code> 模块，支持读写和样式设置。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">openpyxl</span>
+<span class="n">wb</span> <span class="o">=</span> <span class="n">openpyxl</span><span class="p">.</span><span class="nc">Workbook</span><span class="p">()</span>
+<span class="n">sheet</span> <span class="o">=</span> <span class="n">wb</span><span class="p">.</span><span class="n">active</span>
+<span class="n">sheet</span><span class="p">[</span><span class="sh">'</span><span class="s">A1</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">姓名</span><span class="sh">'</span>
+<span class="n">sheet</span><span class="p">[</span><span class="sh">'</span><span class="s">B1</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">年龄</span><span class="sh">'</span>
+<span class="n">sheet</span><span class="p">[</span><span class="sh">'</span><span class="s">A2</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">张三</span><span class="sh">'</span>
+<span class="n">sheet</span><span class="p">[</span><span class="sh">'</span><span class="s">B2</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">wb</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="sh">'</span><span class="s">data.xlsx</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="三办公自动化wordpowerpointpdf">三、办公自动化：Word/PowerPoint/PDF</h2>
+
+<h3 id="1-word文档操作">1. Word文档操作</h3>
+<ul>
+  <li>使用 <code class="language-plaintext highlighter-rouge">python-docx</code> 模块，创建和修改文档。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">docx</span> <span class="kn">import</span> <span class="n">Document</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="nc">Document</span><span class="p">()</span>
+<span class="n">doc</span><span class="p">.</span><span class="nf">add_heading</span><span class="p">(</span><span class="sh">'</span><span class="s">报告标题</span><span class="sh">'</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># 0级标题
+</span><span class="n">doc</span><span class="p">.</span><span class="nf">add_paragraph</span><span class="p">(</span><span class="sh">'</span><span class="s">正文内容</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">doc</span><span class="p">.</span><span class="nf">add_picture</span><span class="p">(</span><span class="sh">'</span><span class="s">image.jpg</span><span class="sh">'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="nc">Cm</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># 插入图片
+</span><span class="n">doc</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="sh">'</span><span class="s">report.docx</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="2-powerpoint生成">2. PowerPoint生成</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">python-pptx</code> 模块用于创建幻灯片。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pptx</span> <span class="kn">import</span> <span class="n">Presentation</span>
+<span class="n">prs</span> <span class="o">=</span> <span class="nc">Presentation</span><span class="p">()</span>
+<span class="n">slide</span> <span class="o">=</span> <span class="n">prs</span><span class="p">.</span><span class="n">slides</span><span class="p">.</span><span class="nf">add_slide</span><span class="p">(</span><span class="n">prs</span><span class="p">.</span><span class="n">slide_layouts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># 标题页
+</span><span class="n">slide</span><span class="p">.</span><span class="n">shapes</span><span class="p">.</span><span class="n">title</span><span class="p">.</span><span class="n">text</span> <span class="o">=</span> <span class="sh">'</span><span class="s">演示标题</span><span class="sh">'</span>
+<span class="n">slide</span><span class="p">.</span><span class="n">placeholders</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">text</span> <span class="o">=</span> <span class="sh">'</span><span class="s">副标题</span><span class="sh">'</span>
+<span class="n">prs</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="sh">'</span><span class="s">demo.pptx</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="3-pdf处理">3. PDF处理</h3>
+<ul>
+  <li><strong>读取文本</strong>：<code class="language-plaintext highlighter-rouge">PyPDF2</code> 模块，<code class="language-plaintext highlighter-rouge">PdfReader</code> 提取文字。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">PyPDF2</span>
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">document.pdf</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">rb</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">PyPDF2</span><span class="p">.</span><span class="nc">PdfReader</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="sh">''</span>
+    <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">.</span><span class="n">pages</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="n">page</span><span class="p">.</span><span class="nf">extract_text</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>创建PDF</strong>：<code class="language-plaintext highlighter-rouge">reportlab</code> 模块，绘制文字和图形。</li>
+</ul>
+
+<h2 id="四图像处理与邮件短信发送">四、图像处理与邮件/短信发送</h2>
+
+<h3 id="1-图像处理pillow">1. 图像处理(Pillow)</h3>
+<ul>
+  <li><strong>基础操作</strong>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">photo.jpg</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">size</span><span class="p">,</span> <span class="n">img</span><span class="p">.</span><span class="nb">format</span><span class="p">)</span>
+<span class="n">img</span><span class="p">.</span><span class="nf">crop</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">)).</span><span class="nf">show</span><span class="p">()</span>  <span class="c1"># 剪裁
+</span><span class="n">img</span><span class="p">.</span><span class="nf">resize</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">)).</span><span class="nf">show</span><span class="p">()</span>  <span class="c1"># 缩放
+</span></code></pre></div>    </div>
+  </li>
+  <li><strong>绘图与滤镜</strong><br />
+使用 <code class="language-plaintext highlighter-rouge">ImageDraw</code> 绘制图形，<code class="language-plaintext highlighter-rouge">ImageFilter</code> 应用滤镜。</li>
+</ul>
+
+<h3 id="2-发送电子邮件">2. 发送电子邮件</h3>
+<ul>
+  <li>使用 <code class="language-plaintext highlighter-rouge">smtplib</code> 和 <code class="language-plaintext highlighter-rouge">email</code> 模块，通过SMTP服务器发送。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">smtplib</span>
+<span class="kn">from</span> <span class="n">email.mime.text</span> <span class="kn">import</span> <span class="n">MIMEText</span>
+<span class="kn">from</span> <span class="n">email.header</span> <span class="kn">import</span> <span class="n">Header</span>
+  
+<span class="n">msg</span> <span class="o">=</span> <span class="nc">MIMEText</span><span class="p">(</span><span class="sh">'</span><span class="s">邮件内容</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">plain</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">msg</span><span class="p">[</span><span class="sh">'</span><span class="s">From</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">sender@126.com</span><span class="sh">'</span>
+<span class="n">msg</span><span class="p">[</span><span class="sh">'</span><span class="s">To</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">receiver@qq.com</span><span class="sh">'</span>
+<span class="n">msg</span><span class="p">[</span><span class="sh">'</span><span class="s">Subject</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="nc">Header</span><span class="p">(</span><span class="sh">'</span><span class="s">邮件主题</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
+  
+<span class="k">with</span> <span class="n">smtplib</span><span class="p">.</span><span class="nc">SMTP_SSL</span><span class="p">(</span><span class="sh">'</span><span class="s">smtp.126.com</span><span class="sh">'</span><span class="p">,</span> <span class="mi">465</span><span class="p">)</span> <span class="k">as</span> <span class="n">server</span><span class="p">:</span>
+    <span class="n">server</span><span class="p">.</span><span class="nf">login</span><span class="p">(</span><span class="sh">'</span><span class="s">sender@126.com</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">授权码</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">server</span><span class="p">.</span><span class="nf">sendmail</span><span class="p">(</span><span class="sh">'</span><span class="s">sender@126.com</span><span class="sh">'</span><span class="p">,</span> <span class="p">[</span><span class="sh">'</span><span class="s">receiver@qq.com</span><span class="sh">'</span><span class="p">],</span> <span class="n">msg</span><span class="p">.</span><span class="nf">as_string</span><span class="p">())</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="3-发送短信">3. 发送短信</h3>
+<ul>
+  <li>调用第三方短信平台API（如螺丝帽），通过HTTP请求发送。
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span>
+<span class="k">def</span> <span class="nf">send_sms</span><span class="p">(</span><span class="n">tel</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span>
+        <span class="sh">'</span><span class="s">http://sms-api.luosimao.com/v1/send.json</span><span class="sh">'</span><span class="p">,</span>
+        <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="sh">'</span><span class="s">api</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">key-xxx</span><span class="sh">'</span><span class="p">),</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">mobile</span><span class="sh">'</span><span class="p">:</span> <span class="n">tel</span><span class="p">,</span> <span class="sh">'</span><span class="s">message</span><span class="sh">'</span><span class="p">:</span> <span class="n">content</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">resp</span><span class="p">.</span><span class="nf">json</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="五正则表达式应用">五、正则表达式应用</h2>
+
+<h3 id="1-基本语法">1. 基本语法</h3>
+<ul>
+  <li><strong>常用符号</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">.</code>：任意字符，<code class="language-plaintext highlighter-rouge">\d</code>：数字，<code class="language-plaintext highlighter-rouge">\w</code>：字母/数字/下划线。</li>
+      <li><code class="language-plaintext highlighter-rouge">^</code>：开头，<code class="language-plaintext highlighter-rouge">$</code>：结尾，<code class="language-plaintext highlighter-rouge">[]</code>：字符集，<code class="language-plaintext highlighter-rouge">|</code>：或。</li>
+      <li><code class="language-plaintext highlighter-rouge">*</code>：0+次，<code class="language-plaintext highlighter-rouge">+</code>：1+次，<code class="language-plaintext highlighter-rouge">?</code>：0或1次，<code class="language-plaintext highlighter-rouge">{n}</code>：精确n次。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-python中的正则操作">2. Python中的正则操作</h3>
+<ul>
+  <li><strong>匹配与搜索</strong>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">re</span>
+<span class="n">text</span> <span class="o">=</span> <span class="sh">'</span><span class="s">手机号：13812345678，QQ：123456789</span><span class="sh">'</span>
+<span class="c1"># 匹配手机号
+</span><span class="n">phone</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">1[3-8]\d{9}</span><span class="sh">'</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">phone</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">phone</span><span class="p">.</span><span class="nf">group</span><span class="p">())</span>
+<span class="c1"># 提取所有数字
+</span><span class="n">nums</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">findall</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">\d+</span><span class="sh">'</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>  <span class="c1"># ['13812345678', '123456789']
+</span></code></pre></div>    </div>
+  </li>
+  <li><strong>替换与分割</strong>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 替换敏感词
+</span><span class="n">text</span> <span class="o">=</span> <span class="sh">'</span><span class="s">fuck you, shit!</span><span class="sh">'</span>
+<span class="n">cleaned</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">fuck|shit</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">*</span><span class="sh">'</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="p">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">cleaned</span><span class="p">)</span>  <span class="c1"># * you, *!
+# 分割句子
+</span><span class="n">poem</span> <span class="o">=</span> <span class="sh">'</span><span class="s">床前明月光，疑是地上霜。举头望明月，低头思故乡。</span><span class="sh">'</span>
+<span class="n">sentences</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">[，。]</span><span class="sh">'</span><span class="p">,</span> <span class="n">poem</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>  <span class="c1"># ['床前明月光', '疑是地上霜', '举头望明月', '低头思故乡', '']
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+  </div><a class="u-url" href="/blog/python/2021/07/15/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%BF%9B%E9%98%B6%E7%AF%87.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"></h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name"></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

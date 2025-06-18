@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的学习笔记 - 学习笔记</title>
+    <style>
+        /* 全局样式 */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --text-color: #333;
+            --light-gray: #f5f7fa;
+            --border-color: #e1e4e8;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+            padding: 20px;
+        }
+        
+        /* 网格容器 */
+        .grid-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: #777;
+            font-weight: normal;
+        }
+        
+        /* 笔记网格 */
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        /* 笔记卡片 */
+        .note-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+        }
+        
+        .note-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color);
+        }
+        
+        .note-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .note-card h3 {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+        
+        .note-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            flex-grow: 1;
+        }
+        
+        .post-date {
+            background: var(--light-gray);
+            color: #666;
+            font-size: 0.85rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .excerpt {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .read-more {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .note-card:hover .read-more {
+            background: var(--secondary-color);
+        }
+        
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .category-tag {
+            display: inline-block;
+            background: #e0f7fa;
+            color: #00838f;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .notes-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .notes-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .notes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-container {
+                padding: 15px;
+            }
+        }
+        
+        /* 分页样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 10px;
+        }
+        
+        .pagination a, .pagination span {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .pagination a {
+            background: var(--primary-color);
+            color: white;
+            transition: background 0.3s;
+        }
+        
+        .pagination a:hover {
+            background: var(--secondary-color);
+        }
+        
+        .pagination .disabled {
+            background: #ddd;
+            color: #999;
+            cursor: not-allowed;
+        }
+        
+        .pagination .current-page {
+            background: #f1f1f1;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <header class="page-header">
+            <h1 class="page-title">我的学习笔记</h1>
+            <p class="page-subtitle">知识整理与经验分享</p>
+        </header>
+        
+        <div class="notes-grid">
+            <!-- 遍历所有文章 -->
+            
+            <div class="note-card">
+                <a href="/blog/sap/2025/06/12/SAP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+                    <span class="post-date">2025年06月12日</span>
+                    <h3>SAP学习笔记</h3>
+                    <p class="excerpt">
+                        
+                            SAP学习笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">SAP</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/linux/2025/06/05/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+                    <span class="post-date">2025年06月05日</span>
+                    <h3>Linux学习笔记</h3>
+                    <p class="excerpt">
+                        
+                            Linux 学习笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">Linux</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/java/2025/06/03/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+                    <span class="post-date">2025年06月03日</span>
+                    <h3>Java学习笔记</h3>
+                    <p class="excerpt">
+                        
+                            Java学习笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">Java</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/golang/2025/06/03/Golang%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+                    <span class="post-date">2025年06月03日</span>
+                    <h3>Golang学习笔记</h3>
+                    <p class="excerpt">
+                        
+                            Golang学习笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">Golang</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/c++/2025/06/03/Cpp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+                    <span class="post-date">2025年06月03日</span>
+                    <h3>Cpp学习笔记</h3>
+                    <p class="excerpt">
+                        
+                            C++ 学习笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">C++</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/sql/%E6%95%B0%E6%8D%AE%E5%BA%93/2025/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+                    <span class="post-date">2025年06月01日</span>
+                    <h3>数据库学习笔记</h3>
+                    <p class="excerpt">
+                        
+                            数据库学习笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">SQL</span>
+                        
+                        <span class="category-tag">数据库</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/matlab/2025/05/31/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+                    <span class="post-date">2025年05月31日</span>
+                    <h3>Matlab学习笔记</h3>
+                    <p class="excerpt">
+                        
+                            MATLAB学习笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">Matlab</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/javascript/2025/05/29/Javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+                    <span class="post-date">2025年05月29日</span>
+                    <h3>Javascript学习笔记</h3>
+                    <p class="excerpt">
+                        
+                            Javascript学习笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">Javascript</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/python/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/2024/02/29/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+                    <span class="post-date">2024年02月29日</span>
+                    <h3>深度学习学习笔记</h3>
+                    <p class="excerpt">
+                        
+                            深度学习学习笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">Python</span>
+                        
+                        <span class="category-tag">深度学习</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/python/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/2023/12/13/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+                    <span class="post-date">2023年12月13日</span>
+                    <h3>吴恩达深度学习笔记</h3>
+                    <p class="excerpt">
+                        
+                            吴恩达深度学习笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">Python</span>
+                        
+                        <span class="category-tag">深度学习</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%B7%A5%E7%A8%8B%E5%B8%88/2022/04/05/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%B7%A5%E7%A8%8B%E5%B8%88.html">
+                    <span class="post-date">2022年04月05日</span>
+                    <h3>云计算学习笔记</h3>
+                    <p class="excerpt">
+                        
+                            云计算笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">云计算工程师</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/python/2021/08/28/Python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%B8%8E%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0.html">
+                    <span class="post-date">2021年08月28日</span>
+                    <h3>Python网络爬虫学习笔记</h3>
+                    <p class="excerpt">
+                        
+                            Python网络爬虫学习笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">Python</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/python/2021/08/20/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+                    <span class="post-date">2021年08月20日</span>
+                    <h3>Python数据分析学习笔记</h3>
+                    <p class="excerpt">
+                        
+                            Python 数据分析学习笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">Python</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/python/2021/07/15/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%BF%9B%E9%98%B6%E7%AF%87.html">
+                    <span class="post-date">2021年07月15日</span>
+                    <h3>Python学习笔记-进阶篇</h3>
+                    <p class="excerpt">
+                        
+                            Python 进阶应用笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">Python</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+            <div class="note-card">
+                <a href="/blog/python/2021/06/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87.html">
+                    <span class="post-date">2021年06月22日</span>
+                    <h3>Python学习笔记-基础篇</h3>
+                    <p class="excerpt">
+                        
+                            Python 学习笔记
+
+                        
+                    </p>
+                    
+                    <!-- 显示分类标签 -->
+                    
+                    <div class="categories">
+                        
+                        <span class="category-tag">Python</span>
+                        
+                    </div>
+                    
+                    
+                    <span class="read-more">阅读更多</span>
+                </a>
+            </div>
+            
+        </div>
+        
+        <!-- 分页导航（未来超过15篇时使用） -->
+        
+    </div>
+</body>
+</html>

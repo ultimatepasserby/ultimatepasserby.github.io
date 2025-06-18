@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Python学习笔记-基础篇</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Python学习笔记-基础篇" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Python 学习笔记" />
+<meta property="og:description" content="Python 学习笔记" />
+<link rel="canonical" href="http://localhost:4000/blog/python/2021/06/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87.html" />
+<meta property="og:url" content="http://localhost:4000/blog/python/2021/06/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-22T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Python学习笔记-基础篇" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-06-22T00:00:00+08:00","datePublished":"2021-06-22T00:00:00+08:00","description":"Python 学习笔记","headline":"Python学习笔记-基础篇","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/python/2021/06/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87.html"},"url":"http://localhost:4000/blog/python/2021/06/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" /></head>
+<body><a href="/" class="home-link">返回简历主页</a>
+<!-- 确保自定义样式被加载 -->
+<link rel="stylesheet" href="/blog/assets/css/main.scss"><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python学习笔记-基础篇</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-06-22T00:00:00+08:00" itemprop="datePublished">Jun 22, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="python-学习笔记">Python 学习笔记</h1>
+
+<h2 id="一python-基础入门">一、Python 基础入门</h2>
+
+<h3 id="1-python-简介">1. Python 简介</h3>
+<ul>
+  <li><strong>创始人</strong>：吉多·范罗苏姆（Guido von Rossum）。</li>
+  <li><strong>特点</strong>：简洁易读、开发效率高、跨平台、开源且生态圈丰富。</li>
+  <li><strong>应用领域</strong>：大模型、计算机视觉、智能推荐、自动驾驶、数据科学等。</li>
+</ul>
+
+<h3 id="2-发展历程">2. 发展历程</h3>
+<ul>
+  <li>1989 年圣诞，吉多为打发时间开始开发 Python。</li>
+  <li>1991 年发布首个版本 0.9.0。</li>
+  <li>2008 年 Python 3.0 发布，不兼容 Python 2，2020 年停止对 Python 2 的维护。</li>
+</ul>
+
+<h3 id="3-优缺点">3. 优缺点</h3>
+<ul>
+  <li><strong>优点</strong>：简单易学、代码量少、胶水语言（可整合其他语言模块）、跨平台。</li>
+  <li><strong>缺点</strong>：执行效率相对较低（解释型语言特性）。</li>
+</ul>
+
+<h3 id="4-环境安装">4. 环境安装</h3>
+<ul>
+  <li><strong>官方解释器</strong>：从 <a href="https://www.python.org/downloads/">Python 官网</a> 下载对应系统的安装包。</li>
+  <li><strong>Windows 安装</strong>：安装时勾选“Add Python to PATH”，自定义安装路径（不含中文和特殊字符）。</li>
+  <li><strong>macOS 安装</strong>：下载 pkg 文件，双击安装，通过 <code class="language-plaintext highlighter-rouge">python3 --version</code> 检查安装结果。</li>
+  <li><strong>包管理工具</strong>：pip，可通过 <code class="language-plaintext highlighter-rouge">pip --version</code> 检查是否可用。</li>
+</ul>
+
+<h2 id="二第一个-python-程序">二、第一个 Python 程序</h2>
+
+<h3 id="1-编写工具">1. 编写工具</h3>
+<ul>
+  <li><strong>交互式环境</strong>：命令行输入 <code class="language-plaintext highlighter-rouge">python</code>（Windows）或 <code class="language-plaintext highlighter-rouge">python3</code>（macOS），适合简单测试。</li>
+  <li><strong>IPython</strong>：增强版交互式环境，需通过 <code class="language-plaintext highlighter-rouge">pip install ipython</code> 安装。</li>
+  <li><strong>PyCharm</strong>：专业集成开发环境（IDE），适合项目开发，支持代码补全、调试等功能。</li>
+  <li><strong>VS Code</strong>：轻量级编辑器，安装 Python 插件后可用。</li>
+</ul>
+
+<h3 id="2-第一个程序hello-world">2. 第一个程序：Hello World</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">hello, world</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">print()</code> 是内置函数，用于输出内容。</li>
+  <li>字符串可用单引号或双引号包裹，需使用英文符号。</li>
+</ul>
+
+<h3 id="3-注释">3. 注释</h3>
+<ul>
+  <li><strong>单行注释</strong>：以 <code class="language-plaintext highlighter-rouge">#</code> 开头。</li>
+  <li><strong>多行注释</strong>：用三个双引号 <code class="language-plaintext highlighter-rouge">"""</code> 包裹。</li>
+</ul>
+
+<h2 id="三变量与数据类型">三、变量与数据类型</h2>
+
+<h3 id="1-变量">1. 变量</h3>
+<ul>
+  <li><strong>定义</strong>：用于存储数据的内存空间，可修改和读取。</li>
+  <li><strong>命名规则</strong>：
+    <ul>
+      <li>由字母、数字、下划线组成，数字不能开头。</li>
+      <li>区分大小写（如 <code class="language-plaintext highlighter-rouge">a</code> 和 <code class="language-plaintext highlighter-rouge">A</code> 是不同变量）。</li>
+      <li>不能与关键字（如 <code class="language-plaintext highlighter-rouge">if</code>、<code class="language-plaintext highlighter-rouge">for</code>）和保留字（如 <code class="language-plaintext highlighter-rouge">int</code>、<code class="language-plaintext highlighter-rouge">print</code>）重名。</li>
+    </ul>
+  </li>
+  <li><strong>命名惯例</strong>：小写字母+下划线（如 <code class="language-plaintext highlighter-rouge">user_name</code>）。</li>
+</ul>
+
+<h3 id="2-数据类型">2. 数据类型</h3>
+<ul>
+  <li><strong>整型（int）</strong>：如 <code class="language-plaintext highlighter-rouge">100</code>、<code class="language-plaintext highlighter-rouge">0b100</code>（二进制）、<code class="language-plaintext highlighter-rouge">0x100</code>（十六进制）。</li>
+  <li><strong>浮点型（float）</strong>：如 <code class="language-plaintext highlighter-rouge">3.14</code>、<code class="language-plaintext highlighter-rouge">1.23e2</code>（科学计数法，等于 123）。</li>
+  <li><strong>字符串（str）</strong>：如 <code class="language-plaintext highlighter-rouge">'hello'</code>、<code class="language-plaintext highlighter-rouge">"world"</code>。</li>
+  <li><strong>布尔型（bool）</strong>：值为 <code class="language-plaintext highlighter-rouge">True</code> 或 <code class="language-plaintext highlighter-rouge">False</code>。</li>
+</ul>
+
+<h3 id="3-类型转换">3. 类型转换</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">int()</code>：转整数，如 <code class="language-plaintext highlighter-rouge">int('123')</code> → 123。</li>
+  <li><code class="language-plaintext highlighter-rouge">float()</code>：转浮点数，如 <code class="language-plaintext highlighter-rouge">float('3.14')</code> → 3.14。</li>
+  <li><code class="language-plaintext highlighter-rouge">str()</code>：转字符串，如 <code class="language-plaintext highlighter-rouge">str(100)</code> → <code class="language-plaintext highlighter-rouge">'100'</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">chr()</code>：ASCII 码转字符，如 <code class="language-plaintext highlighter-rouge">chr(97)</code> → <code class="language-plaintext highlighter-rouge">'a'</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">ord()</code>：字符转 ASCII 码，如 <code class="language-plaintext highlighter-rouge">ord('a')</code> → 97。</li>
+</ul>
+
+<h2 id="四运算符与表达式">四、运算符与表达式</h2>
+
+<h3 id="1-算术运算符">1. 算术运算符</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">+</code>（加）、<code class="language-plaintext highlighter-rouge">-</code>（减）、<code class="language-plaintext highlighter-rouge">*</code>（乘）、<code class="language-plaintext highlighter-rouge">/</code>（除）、<code class="language-plaintext highlighter-rouge">//</code>（整除）、<code class="language-plaintext highlighter-rouge">%</code>（取模）、<code class="language-plaintext highlighter-rouge">**</code>（幂运算）。</li>
+  <li>示例：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># 3
+</span><span class="nf">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span>   <span class="c1"># 1
+</span><span class="nf">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>   <span class="c1"># 8
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="2-赋值运算符">2. 赋值运算符</h3>
+<ul>
+  <li>基本赋值：<code class="language-plaintext highlighter-rouge">=</code>，如 <code class="language-plaintext highlighter-rouge">a = 10</code>。</li>
+  <li>复合赋值：<code class="language-plaintext highlighter-rouge">+=</code>、<code class="language-plaintext highlighter-rouge">-=</code>、<code class="language-plaintext highlighter-rouge">*=</code> 等，如 <code class="language-plaintext highlighter-rouge">a += 5</code> 等价于 <code class="language-plaintext highlighter-rouge">a = a + 5</code>。</li>
+  <li>海象运算符（Python 3.8+）：<code class="language-plaintext highlighter-rouge">:=</code>，可在表达式中赋值，如 <code class="language-plaintext highlighter-rouge">print((a := 10))</code> → 10。</li>
+</ul>
+
+<h3 id="3-比较与逻辑运算符">3. 比较与逻辑运算符</h3>
+<ul>
+  <li><strong>比较运算符</strong>：<code class="language-plaintext highlighter-rouge">==</code>（等于）、<code class="language-plaintext highlighter-rouge">!=</code>（不等于）、<code class="language-plaintext highlighter-rouge">&lt;</code>（小于）、<code class="language-plaintext highlighter-rouge">&gt;</code>（大于）等，结果为布尔值。</li>
+  <li><strong>逻辑运算符</strong>：<code class="language-plaintext highlighter-rouge">and</code>（与）、<code class="language-plaintext highlighter-rouge">or</code>（或）、<code class="language-plaintext highlighter-rouge">not</code>（非）。</li>
+  <li>示例：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># True
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="4-应用示例">4. 应用示例</h3>
+<ul>
+  <li><strong>华氏温度转摄氏温度</strong>：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">请输入华氏温度: </span><span class="sh">'</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">f</span><span class="si">:</span><span class="p">.</span><span class="mi">1</span><span class="n">f</span><span class="si">}</span><span class="s">华氏度 = </span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="p">.</span><span class="mi">1</span><span class="n">f</span><span class="si">}</span><span class="s">摄氏度</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>判断闰年</strong>：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">year</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">请输入年份: </span><span class="sh">'</span><span class="p">))</span>
+<span class="n">is_leap</span> <span class="o">=</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s">是闰年</span><span class="sh">'</span> <span class="k">if</span> <span class="n">is_leap</span> <span class="k">else</span> <span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s">不是闰年</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="五分支结构">五、分支结构</h2>
+
+<h3 id="1-if-else-结构">1. if-else 结构</h3>
+<ul>
+  <li>单分支：<code class="language-plaintext highlighter-rouge">if 条件: 语句</code>。</li>
+  <li>双分支：<code class="language-plaintext highlighter-rouge">if 条件: 语句1 else: 语句2</code>。</li>
+  <li>多分支：<code class="language-plaintext highlighter-rouge">if 条件1: 语句1 elif 条件2: 语句2 else: 语句3</code>。</li>
+  <li>示例（BMI 计算）：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">height</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">身高(cm)：</span><span class="sh">'</span><span class="p">))</span> <span class="o">/</span> <span class="mi">100</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">体重(kg)：</span><span class="sh">'</span><span class="p">))</span>
+<span class="n">bmi</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mf">18.5</span><span class="p">:</span>
+  <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">体重过轻</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mi">24</span><span class="p">:</span>
+  <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">身材标准</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mi">27</span><span class="p">:</span>
+  <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">体重过重</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">肥胖</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="2-match-case-结构python-310">2. match-case 结构（Python 3.10+）</h3>
+<ul>
+  <li>用于多条件分支，更简洁。</li>
+  <li>示例：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">status_code</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">响应状态码: </span><span class="sh">'</span><span class="p">))</span>
+<span class="n">match</span> <span class="n">status_code</span><span class="p">:</span>
+  <span class="n">case</span> <span class="mi">404</span><span class="p">:</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Not Found</span><span class="sh">'</span><span class="p">)</span>
+  <span class="n">case</span> <span class="mi">403</span><span class="p">:</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Forbidden</span><span class="sh">'</span><span class="p">)</span>
+  <span class="n">case</span> <span class="n">_</span><span class="p">:</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Unknown Status Code</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="六循环结构">六、循环结构</h2>
+
+<h3 id="1-for-in-循环">1. for-in 循环</h3>
+<ul>
+  <li>适用于已知次数的循环，可遍历序列（列表、字符串等）。</li>
+  <li>示例（1-100 偶数求和）：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+  <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>  <span class="c1"># 2550
+</span></code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">range()</code> 用法：
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">range(n)</code>：0 到 n-1 的整数。</li>
+      <li><code class="language-plaintext highlighter-rouge">range(a, b)</code>：a 到 b-1 的整数。</li>
+      <li><code class="language-plaintext highlighter-rouge">range(a, b, step)</code>：a 到 b-1，步长为 step。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-while-循环">2. while 循环</h3>
+<ul>
+  <li>适用于条件满足时循环，不确定次数。</li>
+  <li>示例（猜数字游戏）：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">random</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+  <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="n">num</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">请猜数字: </span><span class="sh">'</span><span class="p">))</span>
+  <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="n">answer</span><span class="p">:</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">大一点</span><span class="sh">'</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="n">answer</span><span class="p">:</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">小一点</span><span class="sh">'</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">猜对了！共猜了</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s">次</span><span class="sh">'</span><span class="p">)</span>
+      <span class="k">break</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="3-循环控制">3. 循环控制</h3>
+<ul>
+  <li><strong>break</strong>：跳出当前循环。</li>
+  <li><strong>continue</strong>：跳过本次循环剩余代码，进入下一次循环。</li>
+  <li><strong>else</strong>：循环正常结束后执行（未被 break 中断）。</li>
+</ul>
+
+<h3 id="4-嵌套循环">4. 嵌套循环</h3>
+<ul>
+  <li>示例（打印九九乘法表）：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">×</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s">=</span><span class="si">{</span><span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="si">}</span><span class="sh">'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="sh">'</span><span class="se">\t</span><span class="sh">'</span><span class="p">)</span>
+  <span class="nf">print</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="七数据结构">七、数据结构</h2>
+
+<h3 id="1-列表list">1. 列表（list）</h3>
+<ul>
+  <li><strong>特点</strong>：有序、可变、可重复、元素类型任意。</li>
+  <li><strong>创建</strong>：<code class="language-plaintext highlighter-rouge">[1, 2, 3]</code> 或 <code class="language-plaintext highlighter-rouge">list(iterable)</code>。</li>
+  <li><strong>常用操作</strong>：
+    <ul>
+      <li>索引：<code class="language-plaintext highlighter-rouge">list[0]</code>（正向）、<code class="language-plaintext highlighter-rouge">list[-1]</code>（反向）。</li>
+      <li>切片：<code class="language-plaintext highlighter-rouge">list[1:3]</code>（左闭右开）、<code class="language-plaintext highlighter-rouge">list[::2]</code>（步长 2）。</li>
+      <li>增删改：<code class="language-plaintext highlighter-rouge">append()</code>、<code class="language-plaintext highlighter-rouge">insert()</code>、<code class="language-plaintext highlighter-rouge">remove()</code>、<code class="language-plaintext highlighter-rouge">pop()</code>、<code class="language-plaintext highlighter-rouge">list[0] = 10</code>。</li>
+      <li>其他：<code class="language-plaintext highlighter-rouge">sort()</code>（排序）、<code class="language-plaintext highlighter-rouge">reverse()</code>（反转）、<code class="language-plaintext highlighter-rouge">len(list)</code>（长度）。</li>
+    </ul>
+  </li>
+  <li><strong>列表生成式</strong>：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 生成 1-10 的平方列表
+</span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
+<span class="c1"># 筛选偶数并平方
+</span><span class="n">even_squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="2-元组tuple">2. 元组（tuple）</h3>
+<ul>
+  <li><strong>特点</strong>：有序、不可变、可重复，适合存储不可修改的数据。</li>
+  <li><strong>创建</strong>：<code class="language-plaintext highlighter-rouge">(1, 2, 3)</code> 或 <code class="language-plaintext highlighter-rouge">tuple(iterable)</code>，单元素元组需加逗号：<code class="language-plaintext highlighter-rouge">(1,)</code>。</li>
+  <li><strong>解包</strong>：<code class="language-plaintext highlighter-rouge">a, b = (1, 2)</code>，可配合星号表达式：<code class="language-plaintext highlighter-rouge">a, *b = (1, 2, 3, 4)</code> → <code class="language-plaintext highlighter-rouge">a=1, b=[2,3,4]</code>。</li>
+</ul>
+
+<h3 id="3-字符串str">3. 字符串（str）</h3>
+<ul>
+  <li><strong>特点</strong>：有序、不可变，由字符组成。</li>
+  <li><strong>常用操作</strong>：
+    <ul>
+      <li>索引/切片：与列表类似。</li>
+      <li>拼接：<code class="language-plaintext highlighter-rouge">'hello' + 'world'</code>。</li>
+      <li>格式化：
+        <ul>
+          <li>传统方式：<code class="language-plaintext highlighter-rouge">'{} {}'.format('hello', 'world')</code>。</li>
+          <li>f-string：<code class="language-plaintext highlighter-rouge">f'hello {world}'</code>。</li>
+        </ul>
+      </li>
+      <li>方法：<code class="language-plaintext highlighter-rouge">strip()</code>（去首尾空格）、<code class="language-plaintext highlighter-rouge">split()</code>（分割）、<code class="language-plaintext highlighter-rouge">replace()</code>（替换）、<code class="language-plaintext highlighter-rouge">upper()</code>（转大写）等。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="4-集合set">4. 集合（set）</h3>
+<ul>
+  <li><strong>特点</strong>：无序、唯一、可变，元素需为不可变类型。</li>
+  <li><strong>创建</strong>：<code class="language-plaintext highlighter-rouge">{1, 2, 3}</code> 或 <code class="language-plaintext highlighter-rouge">set(iterable)</code>，注意空集合用 <code class="language-plaintext highlighter-rouge">set()</code>。</li>
+  <li><strong>常用操作</strong>：
+    <ul>
+      <li>增删：<code class="language-plaintext highlighter-rouge">add()</code>、<code class="language-plaintext highlighter-rouge">remove()</code>、<code class="language-plaintext highlighter-rouge">pop()</code>。</li>
+      <li>运算：<code class="language-plaintext highlighter-rouge">&amp;</code>（交集）、<code class="language-plaintext highlighter-rouge">|</code>（并集）、<code class="language-plaintext highlighter-rouge">-</code>（差集）、<code class="language-plaintext highlighter-rouge">^</code>（对称差）。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="5-字典dict">5. 字典（dict）</h3>
+<ul>
+  <li><strong>特点</strong>：键值对存储，键唯一且为不可变类型，值任意。</li>
+  <li><strong>创建</strong>：<code class="language-plaintext highlighter-rouge">{'name': '张三', 'age': 18}</code> 或 <code class="language-plaintext highlighter-rouge">dict(key=value)</code>。</li>
+  <li><strong>常用操作</strong>：
+    <ul>
+      <li>访问：<code class="language-plaintext highlighter-rouge">dict['name']</code>，存在则报错，建议用 <code class="language-plaintext highlighter-rouge">dict.get('name')</code>。</li>
+      <li>增删改：<code class="language-plaintext highlighter-rouge">dict['name'] = '李四'</code>、<code class="language-plaintext highlighter-rouge">del dict['age']</code>、<code class="language-plaintext highlighter-rouge">dict.pop('name')</code>。</li>
+      <li>遍历：<code class="language-plaintext highlighter-rouge">for key in dict</code>（遍历键）、<code class="language-plaintext highlighter-rouge">for value in dict.values()</code>（遍历值）、<code class="language-plaintext highlighter-rouge">for key, value in dict.items()</code>（遍历键值对）。</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="八函数与模块">八、函数与模块</h2>
+
+<h3 id="1-函数定义与调用">1. 函数定义与调用</h3>
+<ul>
+  <li><strong>定义</strong>：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+  <span class="sh">"""</span><span class="s">计算两数之和</span><span class="sh">"""</span>
+  <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>调用</strong>：<code class="language-plaintext highlighter-rouge">result = add(5, 3)</code>。</li>
+  <li><strong>参数</strong>：
+    <ul>
+      <li>位置参数：按顺序传参。</li>
+      <li>关键字参数：<code class="language-plaintext highlighter-rouge">add(b=3, a=5)</code>。</li>
+      <li>默认参数：<code class="language-plaintext highlighter-rouge">def add(a, b=0):</code>。</li>
+      <li>可变参数：<code class="language-plaintext highlighter-rouge">*args</code>（元组）、<code class="language-plaintext highlighter-rouge">**kwargs</code>（字典）。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-高阶函数">2. 高阶函数</h3>
+<ul>
+  <li><strong>函数作为参数</strong>：如 <code class="language-plaintext highlighter-rouge">sorted(list, key=len)</code>。</li>
+  <li><strong>lambda 函数</strong>：匿名函数，如 <code class="language-plaintext highlighter-rouge">lambda x: x + 1</code>。</li>
+  <li><strong>偏函数</strong>：固定部分参数，如 <code class="language-plaintext highlighter-rouge">int2 = partial(int, base=2)</code>。</li>
+</ul>
+
+<h3 id="3-模块与导入">3. 模块与导入</h3>
+<ul>
+  <li><strong>导入模块</strong>：
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">import math</code>：通过 <code class="language-plaintext highlighter-rouge">math.pi</code> 访问。</li>
+      <li><code class="language-plaintext highlighter-rouge">from math import pi</code>：直接用 <code class="language-plaintext highlighter-rouge">pi</code>。</li>
+      <li><code class="language-plaintext highlighter-rouge">from math import *</code>：导入所有内容（不推荐）。</li>
+    </ul>
+  </li>
+  <li><strong>常用模块</strong>：<code class="language-plaintext highlighter-rouge">random</code>（随机数）、<code class="language-plaintext highlighter-rouge">time</code>（时间）、<code class="language-plaintext highlighter-rouge">os</code>（操作系统）、<code class="language-plaintext highlighter-rouge">re</code>（正则表达式）。</li>
+</ul>
+
+<h2 id="九面向对象编程">九、面向对象编程</h2>
+
+<h3 id="1-类与对象">1. 类与对象</h3>
+<ul>
+  <li><strong>类定义</strong>：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+      <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+      <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+    
+  <span class="k">def</span> <span class="nf">study</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">course</span><span class="p">):</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">在学习</span><span class="si">{</span><span class="n">course</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>对象创建</strong>：<code class="language-plaintext highlighter-rouge">stu = Student('张三', 18)</code>。</li>
+  <li><strong>方法调用</strong>：<code class="language-plaintext highlighter-rouge">stu.study('Python')</code>。</li>
+</ul>
+
+<h3 id="2-封装继承多态">2. 封装、继承、多态</h3>
+<ul>
+  <li><strong>封装</strong>：隐藏内部细节，提供公共接口。</li>
+  <li><strong>继承</strong>：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Graduate</span><span class="p">(</span><span class="n">Student</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">research</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+      <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">在做研究</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>多态</strong>：不同子类对同一方法有不同实现，如不同形状的 <code class="language-plaintext highlighter-rouge">area()</code> 方法。</li>
+</ul>
+
+<h3 id="3-特殊方法">3. 特殊方法</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">__init__</code>：初始化方法。</li>
+  <li><code class="language-plaintext highlighter-rouge">__str__</code>：定义对象打印时的显示内容。</li>
+  <li><code class="language-plaintext highlighter-rouge">__lt__</code>：定义 <code class="language-plaintext highlighter-rouge">&lt;</code> 运算符行为。</li>
+  <li><code class="language-plaintext highlighter-rouge">__len__</code>：定义 <code class="language-plaintext highlighter-rouge">len()</code> 函数行为。</li>
+</ul>
+
+<h2 id="十实战应用">十、实战应用</h2>
+
+<h3 id="1-生成随机验证码">1. 生成随机验证码</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">random</span>
+<span class="kn">import</span> <span class="n">string</span>
+
+<span class="k">def</span> <span class="nf">generate_code</span><span class="p">(</span><span class="n">code_len</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">生成指定长度的验证码，包含数字和字母</span><span class="sh">"""</span>
+    <span class="n">all_chars</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">digits</span> <span class="o">+</span> <span class="n">string</span><span class="p">.</span><span class="n">ascii_letters</span>
+    <span class="k">return</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="nf">choices</span><span class="p">(</span><span class="n">all_chars</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">code_len</span><span class="p">))</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">generate_code</span><span class="p">())</span>  <span class="c1"># 如 'a1B3'
+</span></code></pre></div></div>
+
+<h3 id="2-工资结算系统">2. 工资结算系统</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="k">class</span> <span class="nc">Employee</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">get_salary</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Manager</span><span class="p">(</span><span class="n">Employee</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_salary</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">15000.0</span>
+
+<span class="k">class</span> <span class="nc">Programmer</span><span class="p">(</span><span class="n">Employee</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">working_hour</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">().</span><span class="nf">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">working_hour</span> <span class="o">=</span> <span class="n">working_hour</span>
+    
+    <span class="k">def</span> <span class="nf">get_salary</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">working_hour</span>
+
+<span class="k">class</span> <span class="nc">Salesman</span><span class="p">(</span><span class="n">Employee</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sales</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">().</span><span class="nf">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">sales</span> <span class="o">=</span> <span class="n">sales</span>
+    
+    <span class="k">def</span> <span class="nf">get_salary</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1800</span> <span class="o">+</span> <span class="n">self</span><span class="p">.</span><span class="n">sales</span> <span class="o">*</span> <span class="mf">0.05</span>
+
+<span class="c1"># 使用示例
+</span><span class="n">emps</span> <span class="o">=</span> <span class="p">[</span><span class="nc">Manager</span><span class="p">(</span><span class="sh">'</span><span class="s">张三</span><span class="sh">'</span><span class="p">),</span> <span class="nc">Programmer</span><span class="p">(</span><span class="sh">'</span><span class="s">李四</span><span class="sh">'</span><span class="p">),</span> <span class="nc">Salesman</span><span class="p">(</span><span class="sh">'</span><span class="s">王五</span><span class="sh">'</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">emp</span> <span class="ow">in</span> <span class="n">emps</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">emp</span><span class="p">,</span> <span class="n">Programmer</span><span class="p">):</span>
+        <span class="n">emp</span><span class="p">.</span><span class="n">working_hour</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">输入</span><span class="si">{</span><span class="n">emp</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">工作时间: </span><span class="sh">'</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">emp</span><span class="p">,</span> <span class="n">Salesman</span><span class="p">):</span>
+        <span class="n">emp</span><span class="p">.</span><span class="n">sales</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">输入</span><span class="si">{</span><span class="n">emp</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">销售额: </span><span class="sh">'</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">emp</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">月薪: ￥</span><span class="si">{</span><span class="n">emp</span><span class="p">.</span><span class="nf">get_salary</span><span class="p">()</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+
+  </div><a class="u-url" href="/blog/python/2021/06/22/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"></h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name"></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

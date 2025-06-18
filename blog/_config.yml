@@ -1,0 +1,20 @@
+# blog/_config.yml
+baseurl: "/blog"  # 必须设置子路径
+url: "https://ultimatepasserby.github.io"  # 你的 GitHub Pages 地址
+
+collections:
+  posts:
+    output: true
+# 主题/插件配置
+theme: minima
+plugins:
+  - jekyll-feed
+
+# 导航链接到主站简历
+navigation:
+  - name: "我的简历"
+    link: "/"
+
+# 在 _config.yml 中添加
+sass:
+  sass_dir: assets/css

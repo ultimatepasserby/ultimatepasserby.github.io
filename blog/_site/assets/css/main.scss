@@ -1,0 +1,59 @@
+/* 网格容器 - 3行5列 */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5列 */
+  grid-auto-rows: minmax(200px, auto); /* 行高自适应 */
+  gap: 20px; /* 卡片间距 */
+  margin-top: 30px;
+  
+  /* 响应式调整 */
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr); /* 中等屏幕4列 */
+  }
+  
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(3, 1fr); /* 小屏幕3列 */
+  }
+  
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr); /* 移动端2列 */
+  }
+}
+
+/* 笔记卡片样式 */
+.note-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #eee;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+  }
+  
+  .post-date {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+    margin: 5px 0;
+  }
+  
+  .excerpt {
+    color: #34495e;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
