@@ -1,0 +1,27 @@
+name: Build and Deploy Jekyll Blog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'blog/**'  # 仅当 blog 目录变化时触发
+
+jobs:
+  jekyll:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 只构建 blog 目录
+      - name: Build Jekyll site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./blog   # 指定 Jekyll 源路径
+          destination: ./_site/blog  # 输出到仓库根目录的 _site
+
+      # 部署整个仓库（包括简历和生成的博客）
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./  # 发布整个仓库
